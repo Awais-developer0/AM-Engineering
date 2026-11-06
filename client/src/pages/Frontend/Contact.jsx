@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
@@ -58,8 +58,8 @@ const FloatingTextarea = ({ id, label, rows = 4, value, onChange }) => {
 };
 
 const contactItems = [
-  { icon: MapPin, title: 'Workshop Location', content: 'Crescent Sugar Mill Road\nNear Shakeel Park Qabristan\nFaisalabad, Pakistan', href: 'https://goo.gl/maps/tnQpavkiijQUSBTX7' },
-  { icon: Phone, title: 'Direct Partner Numbers', content: 'M. Naseer: 0320-657 9307\nNoor Ahmed: 0306-485 4418', href: 'https://wa.me/923206579307' },
+  { icon: MapPin, title: 'Workshop Address', content: 'Crescent Sugar Mill Road\nNear Shakeel Park Qabristan\nFaisalabad, Pakistan', href: 'https://goo.gl/maps/tnQpavkiijQUSBTX7' },
+  { icon: Phone, title: 'Direct Partner Numbers', content: 'M. Naseer: +92 320 657 9307\nNoor Ahmed: +92 306 485 4418', href: 'https://wa.me/923206579307' },
   { icon: Mail, title: 'Email Address', content: 'ameng307@gmail.com', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=ameng307@gmail.com' },
   { icon: Clock, title: 'Operating Hours', content: 'Mon – Sat: 8:00 AM – 6:00 PM\nSunday: Emergency Orders Only' },
 ];
@@ -69,6 +69,10 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    document.title = "Contact Details & Location | A.M Engineering & Elevators";
+  }, []);
 
   const [form, setForm] = useState({
     firstName: '', lastName: '', email: user?.email || '', phone: '', service: 'Passenger Lift Installation', message: ''

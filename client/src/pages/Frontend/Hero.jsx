@@ -17,9 +17,9 @@ const bgImages = [
 ];
 
 const highlights = [
-  { text: "Passenger, Cargo & Hydraulic Lifts", icon: Zap },
-  { text: "Panoramic Glass & Home Elevators", icon: TrendingUp },
-  { text: "Turnkey Installation & 24/7 Breakdown Support", icon: Shield },
+  { text: "Passenger, Cargo, Beam & Home Lifts", icon: Zap },
+  { text: "Overhead Crane Wench & All Type of Conveyors", icon: TrendingUp },
+  { text: "Spinning, Weaving, Processing & Rice Mill Parts", icon: Shield },
 ];
 
 const metrics = [
@@ -76,7 +76,7 @@ const Hero = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
             className="absolute inset-0 w-full h-full object-cover"
-            alt="Commercial Elevators by A.M Engineering & Elevators"
+            alt="Hydraulic lift installation at AM Engineering Faisalabad"
           />
         </AnimatePresence>
         
@@ -101,8 +101,8 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.3 }}
           >
-            <img src="/logo.png" alt="A.M Logo" className="w-5 h-5 rounded-full object-cover ring-1 ring-blue-400/50" />
-            <span>A.M Engineering &amp; Elevators</span>
+            <img src="/logo.png" alt="A.M Engineering & Elevators Logo" className="w-5 h-5 rounded-full object-cover ring-1 ring-blue-400/50" />
+            <span>A.M ENGINEERING &amp; ELEVATORS</span>
           </motion.div>
 
           {/* Heading */}
@@ -110,9 +110,9 @@ const Hero = () => {
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight mb-4 text-white"
             style={{ fontFamily: 'Outfit, sans-serif' }}
           >
-            Modern, Safe &amp; Reliable{' '}
+            A.M Engineering &amp; Elevators |{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-blue-200">
-              Elevator Solutions.
+              Passenger, Cargo Lifts &amp; Mill Parts
             </span>
           </h1>
 
@@ -123,7 +123,7 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-base sm:text-lg text-slate-200 leading-relaxed mb-7 max-w-xl">
-            Specialists in <strong className="text-white">Commercial Passenger Elevators</strong>, <strong className="text-white">Industrial Cargo Lifts</strong>, <strong className="text-white">Panoramic Glass &amp; Home Lifts</strong> — with certified safety valves, smooth single-touch operation, and 24/7 technical maintenance across Pakistan.
+            Specialist in <strong className="text-white">Passenger, Cargo, Beam &amp; Home Lifts</strong>, <strong className="text-white">Overhead Crane Wench</strong>, <strong className="text-white">All Type of Conveyors</strong>, and All Kinds of <strong className="text-white">Spinning, Weaving, Processing &amp; Rice Mill Parts</strong> across Pakistan.
           </p>
 
           {/* CTA Buttons */}

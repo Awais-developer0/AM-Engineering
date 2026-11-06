@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowUpCircle, ShieldCheck, Factory, Gauge, CheckCircle2, ArrowRight, Clock, HeadphonesIcon, Star, Settings2 } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { ArrowUpCircle, ShieldCheck, Factory, Gauge, CheckCircle2, ArrowRight, Clock, HeadphonesIcon, Star, Settings2, Wrench } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const ServiceCard = ({ icon: Icon, title, description, features }) => (
@@ -11,10 +11,11 @@ const ServiceCard = ({ icon: Icon, title, description, features }) => (
     className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 rounded-2xl p-6 sm:p-7 hover:border-blue-400 dark:hover:border-blue-600 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
   >
     {/* Icon */}
-    <div className="w-13 h-13 w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-blue-100 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800">
+    <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-blue-100 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800">
       <Icon size={24} />
     </div>
 
+    {/* H3 for semantic hierarchy */}
     <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2" style={{ fontFamily: 'Outfit, sans-serif' }}>
       {title}
     </h3>
@@ -51,49 +52,53 @@ const whyItems = [
 ];
 
 const Services = () => {
+  useEffect(() => {
+    document.title = "Passenger & Cargo Lifts, Overhead Cranes & Mill Parts | A.M Engineering & Elevators";
+  }, []);
+
   const servicesData = [
     {
       icon: ArrowUpCircle,
-      title: "Passenger & Home Lifts",
-      description: "Safe, efficient, and stylish passenger lifts for residential, commercial and corporate buildings. Available in hydraulic, glass, and mild steel options with single-button operation.",
+      title: "Passenger Lifts & Automatic Elevators",
+      description: "Safe, efficient, space-saving hydraulic and traction passenger lifts for residential and commercial tall buildings. Available in mild steel or glass elevators with single-button easy operation.",
       features: [
-        "Hydraulic & Traction Elevators",
-        "Glass & Stainless Steel Cabins",
-        "High-Speed & Space-Efficient",
-        "24-Hour Safe & Tested Operation",
+        "Hydraulic & High-Speed Lifts",
+        "Mild Steel & Glass Elevators",
+        "Tested for 24-Hour Continuous Safety",
+        "Single-Button Easy Operation",
       ]
     },
     {
       icon: Factory,
       title: "Cargo & Beam Lifts",
-      description: "Heavy-duty cargo lifts engineered for long-term industrial use. Complete turnkey solutions from manufacturing to shaft installation, load testing, and commissioning.",
+      description: "Committed to providing the best cargo lift services across the country. Complete elevator installation, modernization, testing, and commissioning for indoor and outdoor industrial use.",
       features: [
-        "Automatic Heavy Freight Elevators",
-        "Beam & Mezzanine Goods Lifts",
+        "Automatic Cargo Lifts & Elevators",
         "Indoor & Outdoor Installation",
-        "Anti-Drop Safety Valves Included",
+        "Turnkey Testing & Commissioning",
+        "High-Quality Lifetime Investment",
       ]
     },
     {
       icon: Gauge,
-      title: "Overhead Cranes & Conveyors",
-      description: "Bridge cranes, gantry, and jib cranes engineered for precision heavy material movement, plus full conveyor systems (belt, roller, chain, spiral, inclined).",
+      title: "Overhead Crane & Conveyors",
+      description: "Industrial bridge cranes, gantry, and jib cranes with electric wench, plus heavy-duty conveyor systems including belts, rollers, chains, chutes, buckets, slats, and spiral conveyors.",
       features: [
         "Bridge, Gantry & Jib Cranes",
-        "Heavy Motorized Electric Wench",
+        "Electric Motorized Hoist Wench",
         "Belt, Roller & Chain Conveyors",
-        "Custom Energy-Efficient Systems",
+        "Horizontal, Inclined & Spiral Systems",
       ]
     },
     {
       icon: Settings2,
-      title: "Spinning, Weaving & Mill Parts",
-      description: "Comprehensive spare parts manufacturing & supply for Spinning, Weaving, Processing, and Rice Mills — high precision gears, transmission drives, and custom trolleys.",
+      title: "Spinning, Weaving, Processing & Rice Mill Parts",
+      description: "Precision gears and drives transmitting power and motion, and specialized manufacturing trolleys to transport materials in batches across textile, manufacturing, and rice mills.",
       features: [
-        "Industrial Gears & Power Drives",
-        "Batch Manufacturing Trolleys",
-        "Rice Mill Machine Components",
-        "Heavy Precision Machined Parts",
+        "Precision Industrial Gears & Drives",
+        "Heavy Manufacturing Batch Trolleys",
+        "Spinning & Weaving Machine Parts",
+        "Rice Mill Components & Screens",
       ]
     },
   ];
@@ -102,16 +107,16 @@ const Services = () => {
     <section id="services" className="py-20 md:py-24 bg-white dark:bg-slate-900 transition-colors duration-300 border-b border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         
-        {/* Header */}
+        {/* Header - H2 Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold mb-3 uppercase tracking-widest bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
-            <span>Our Core Capabilities</span>
+            <span>All Kinds Spinning Weaving Processing &amp; Rice Mill Parts</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4" style={{ fontFamily: 'Outfit, sans-serif' }}>
-            Engineering &amp; Elevator Services
+            Passenger, Cargo, Beam Lifts, Overhead Cranes &amp; Conveyors
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
-            Specialists in Passenger &amp; Cargo Lifts, Overhead Cranes, Conveyors, and Spinning, Weaving &amp; Rice Mill Machinery Parts across Pakistan.
+            Specialist in Passenger, Cargo, Beam, Home Lifts, Overhead Crane Wench, and All Type of Conveyors throughout Pakistan at reasonable rates.
           </p>
         </div>
 

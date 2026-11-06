@@ -55,7 +55,7 @@ const CATEGORIES = [
   'Spinning & Mill Parts',
 ];
 
-// Curated default products reflecting A.M Engineering & Elevators PDF catalog
+// Curated default products reflecting A.M Engineering & Elevators Official Catalog
 const DEFAULT_PRODUCTS = [
   {
     _id: 'default-1',
@@ -64,16 +64,16 @@ const DEFAULT_PRODUCTS = [
     price: 'Call for Pricing',
     stockStatus: 'In Stock',
     image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800',
-    description: 'Precision engineered industrial gears and drives transmitting power and motion with zero slippage.',
+    description: 'Precision engineered industrial gears and drives transmitting power and motion with zero slippage across textile and processing machinery.',
   },
   {
     _id: 'default-2',
-    name: 'Heavy-Duty Manufacturing Trolley',
+    name: 'Heavy-Duty Batch Manufacturing Trolley',
     category: 'Manufacturing Trolleys',
     price: 'Custom Quotation',
     stockStatus: 'In Stock',
     image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800',
-    description: 'Specialized batch transport trolley engineered for textile, manufacturing, and logistics warehouses.',
+    description: 'Specialized piece of equipment for textile, manufacturing, and logistics to transport and handle materials or products in batches.',
   },
   {
     _id: 'default-3',
@@ -82,52 +82,52 @@ const DEFAULT_PRODUCTS = [
     price: 'Custom Quotation',
     stockStatus: 'In Stock',
     image: 'https://images.unsplash.com/photo-1592256410394-51c948ec13d5?auto=format&fit=crop&q=80&w=800',
-    description: 'Mild steel & luxury glass passenger elevators with space-efficient hydraulic system and high-speed operation.',
+    description: 'Mild steel and architectural glass passenger elevators with space-efficient hydraulic system, 24-hour safety, and single-button operation.',
   },
   {
     _id: 'default-4',
-    name: 'Industrial Heavy Freight Cargo Lift',
+    name: 'Industrial Heavy Freight & Beam Cargo Lift',
     category: 'Passenger & Cargo Lifts',
     price: 'Custom Quotation',
     stockStatus: 'In Stock',
     image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800',
-    description: 'Indoor & outdoor freight elevator with reinforced steel platform, rigorous testing, and turnkey commissioning.',
+    description: 'Indoor & outdoor freight elevator with reinforced steel platform, anti-drop safety valves, and turnkey commissioning for long-term use.',
   },
   {
     _id: 'default-5',
-    name: 'Overhead Bridge Crane & Electric Hoist',
+    name: 'Overhead Bridge Crane & Motorized Electric Wench',
     category: 'Overhead Cranes & Conveyors',
     price: 'Custom Quotation',
     stockStatus: 'In Stock',
     image: 'https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&q=80&w=800',
-    description: 'Heavy material handling overhead crane (bridge, gantry, jib) designed for manufacturing plants and warehouses.',
+    description: 'Bridge crane, gantry crane, and jib crane material handling systems to lift and move heavy steel beams, machinery, and containers.',
   },
   {
     _id: 'default-6',
-    name: 'Industrial Roller & Belt Conveyor System',
+    name: 'Industrial Roller, Belt & Spiral Conveyor System',
     category: 'Overhead Cranes & Conveyors',
     price: 'Custom Quotation',
     stockStatus: 'In Stock',
     image: 'https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&q=80&w=800',
-    description: 'Horizontal, inclined, and spiral conveyor systems for quarries, rice mills, and packaging facilities.',
+    description: 'Horizontal, inclined, and spiral heavy-duty conveyor systems with belts, rollers, chains, chutes, buckets, and slats for factories and mills.',
   },
   {
     _id: 'default-7',
-    name: 'Spinning & Weaving Mill Replacement Parts',
+    name: 'Spinning & Weaving Mill Machinery Parts',
     category: 'Spinning & Mill Parts',
     price: 'Call for Pricing',
     stockStatus: 'In Stock',
     image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800',
-    description: 'Precision machined parts for spinning, weaving, and textile machinery ensuring minimum downtime.',
+    description: 'All kinds of precision machined spare parts for spinning, weaving, and textile processing machinery ensuring consistent operation.',
   },
   {
     _id: 'default-8',
-    name: 'Rice Mill Processing Rollers & Screens',
+    name: 'Rice Mill Processing Machinery Components',
     category: 'Spinning & Mill Parts',
     price: 'Call for Pricing',
     stockStatus: 'In Stock',
     image: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=800',
-    description: 'Durable and wear-resistant machinery components for grain processing and commercial rice mills.',
+    description: 'Durable and wear-resistant machinery components, rollers, screens, and drive transmission parts for commercial rice mills.',
   },
 ];
 
@@ -500,7 +500,12 @@ const AddSparePartModal = ({ onClose, onAdded }) => {
 const ProductCard = ({ product, onOrder, isAdmin, onDelete }) => (
   <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden flex flex-col shadow-sm hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-200">
     <div className="relative h-44 overflow-hidden bg-slate-100 dark:bg-slate-800">
-      <img src={product.image} alt={product.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+      <img
+        src={product.image}
+        alt={`${product.name} - Wholesale Motorcycle & Industrial Spare Parts AM Engineering Faisalabad`}
+        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+        loading="lazy"
+      />
       <div className="absolute top-2.5 right-2.5 flex items-center gap-1.5">
         <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-emerald-600 text-white shadow-sm">
           {product.stockStatus || 'Available'}
@@ -523,9 +528,10 @@ const ProductCard = ({ product, onOrder, isAdmin, onDelete }) => (
     </div>
 
     <div className="p-4 sm:p-5 flex flex-col flex-grow">
-      <h4 className="text-base font-bold text-slate-900 dark:text-white mb-1 leading-snug" style={{ fontFamily: 'Outfit, sans-serif' }}>
+      {/* H3 for semantic item hierarchy */}
+      <h3 className="text-base font-bold text-slate-900 dark:text-white mb-1 leading-snug" style={{ fontFamily: 'Outfit, sans-serif' }}>
         {product.name}
-      </h4>
+      </h3>
       <p className="text-xs text-slate-600 dark:text-slate-400 mb-4 line-clamp-2 leading-relaxed">
         {product.description}
       </p>
@@ -560,6 +566,10 @@ const SpareParts = () => {
   const [showAddModal, setShowAddModal] = useState(false);
   const [products, setProducts] = useState(DEFAULT_PRODUCTS);
   const [loadingProducts, setLoadingProducts] = useState(true);
+
+  useEffect(() => {
+    document.title = "Gears, Mill Parts, Lifts & Cranes Catalog | A.M Engineering & Elevators";
+  }, []);
 
   const fetchProducts = () => {
     setLoadingProducts(true);
@@ -605,7 +615,7 @@ const SpareParts = () => {
     <section id="shop" className="py-20 md:py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300 border-b border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         
-        {/* Header */}
+        {/* Header - H2 Section Title */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold mb-3 uppercase tracking-wider bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
@@ -616,10 +626,10 @@ const SpareParts = () => {
               )}
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-2" style={{ fontFamily: 'Outfit, sans-serif' }}>
-              Specialized Machinery &amp; Parts
+              Spinning, Weaving, Processing &amp; Rice Mills Parts
             </h2>
             <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
-              Gears, transmission drives, manufacturing trolleys, lifts, cranes, and spinning, weaving &amp; rice mill parts supplied across Pakistan.
+              Gears and drives, batch manufacturing trolleys, passenger &amp; cargo lifts, overhead cranes, and conveyors supplied across Pakistan.
             </p>
           </div>
 

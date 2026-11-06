@@ -4,72 +4,47 @@
   
   <!-- Home Page -->
   <url>
-    <loc>https://amengineeringelevators.com/</loc>
+    <loc>https://amengineering.vercel.app/</loc>
     <lastmod>2026-11-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://amengineeringelevators.com/logo.jpg</image:loc>
-      <image:title>A.M Engineering and Elevators Pakistan</image:title>
-      <image:caption>Commercial Passenger and Cargo Elevator Solutions in Pakistan</image:caption>
+      <image:loc>https://amengineering.vercel.app/logo.jpg</image:loc>
+      <image:title>A.M Engineering &amp; Elevators Faisalabad</image:title>
+      <image:caption>Passenger, Cargo, Beam Lifts, Overhead Crane Wench, Conveyors &amp; Mill Parts</image:caption>
     </image:image>
   </url>
 
-  <!-- About Section -->
+  <!-- Passenger & Cargo Lifts, Cranes & Conveyor Services -->
   <url>
-    <loc>https://amengineeringelevators.com/#about</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Services Section -->
-  <url>
-    <loc>https://amengineeringelevators.com/#services</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-  <!-- Lift Estimator & Cost Calculator -->
-  <url>
-    <loc>https://amengineeringelevators.com/#estimator</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Safety Standards & Certifications -->
-  <url>
-    <loc>https://amengineeringelevators.com/#standards</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Spare Parts Catalog -->
-  <url>
-    <loc>https://amengineeringelevators.com/#shop</loc>
+    <loc>https://amengineering.vercel.app/services</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Frequently Asked Questions -->
+  <!-- Spinning, Weaving, Processing & Rice Mill Parts -->
   <url>
-    <loc>https://amengineeringelevators.com/#faq</loc>
+    <loc>https://amengineering.vercel.app/spare-parts</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Elevator Safety Standards & Life Redundancy -->
+  <url>
+    <loc>https://amengineering.vercel.app/safety-standards</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact & Workshop Location -->
+  <url>
+    <loc>https://amengineering.vercel.app/contact</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-  </url>
-
-  <!-- Contact Us -->
-  <url>
-    <loc>https://amengineeringelevators.com/#contact</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
 
 </urlset>
-

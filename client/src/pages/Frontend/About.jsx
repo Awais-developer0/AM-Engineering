@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, ShieldCheck, Users, Clock, Award, ArrowRight, Building2, Shield, Zap } from 'lucide-react';
 
@@ -166,6 +166,10 @@ const StatCard = ({ icon: Icon, label, value, suffix, subtitle, color, index }) 
 const AboutUs = () => {
   const [activeTab, setActiveTab] = useState('All Lifts');
 
+  useEffect(() => {
+    document.title = "About Us | AM Engineering And Elevators Faisalabad";
+  }, []);
+
   const filteredLifts = activeTab === 'All Lifts'
     ? liftProjects
     : liftProjects.filter(p => p.category === activeTab);
@@ -197,15 +201,15 @@ const AboutUs = () => {
             </h2>
 
             <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 mb-4 leading-relaxed font-medium">
-              Are you looking for a safe, low-maintenance passenger or cargo elevator? At <strong className="text-slate-900 dark:text-white">A.M Engineering &amp; Elevators</strong>, lift manufacturing and turnkey elevator installation is our core specialty.
+              Are you looking for a safe and efficient passenger lift? Are you tired of spending money on the maintenance of passenger lifts? Well, then you have landed at the right place. Because <strong className="text-slate-900 dark:text-white">A.M ENGINEERING &amp; ELEVATORS</strong> deals in all kinds of passenger lifts and automatic elevators.
             </p>
 
-            <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base mb-6 leading-relaxed">
-              We design, manufacture, and install <strong>Passenger Lifts, Heavy Cargo Lifts, Beam Lifts, Panoramic Glass Elevators, and Residential Home Lifts</strong>. Built with heavy-gauge mild steel or architectural tempered glass, our lifts deliver smooth single-touch operation, fast floor travel, and certified safety valves.
+            <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base mb-4 leading-relaxed">
+              Our company offers different kinds of passenger lifts used for different purposes. Most of our automatic lifts are hydraulic, ensuring maximum safety. In addition to space-efficient elevators, we deal in high speed and stylish lifts in various sizes, shapes, and materials — whether you are looking for <strong>mild steel lifts</strong> or <strong>glass elevators</strong>, our company covers everything.
             </p>
 
             <p className="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed">
-              In addition to complete elevator systems, our mechanical engineering division supplies heavy overhead cranes, conveyor assemblies, and spinning, weaving &amp; rice mill parts across Pakistan.
+              We are committed to providing the best cargo lift services throughout the country (installation, modernization, testing, and commissioning), heavy overhead crane wench, all types of conveyors, and all kinds of spinning, weaving, processing &amp; rice mill parts at reasonable rates.
             </p>
 
             {/* Check Pillars */}
@@ -331,7 +335,7 @@ const AboutUs = () => {
                   <div className="relative h-56 sm:h-60 overflow-hidden bg-slate-100 dark:bg-slate-800">
                     <img
                       src={lift.image}
-                      alt={lift.title}
+                      alt={`${lift.title} - Hydraulic lift installation at AM Engineering Faisalabad`}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
