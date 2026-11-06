@@ -3,13 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   Settings, ArrowLeft, LayoutDashboard, MessageSquare, ShoppingBag,
   LogOut, Clock, CheckCircle2, Loader2, AlertCircle, RefreshCw,
-  ChevronRight, User, Mail, Phone, Package, Menu, X, PlusCircle, Trash2, ImageIcon, Upload
+  ChevronRight, User, Mail, Phone, Package, Menu, X, PlusCircle, Trash2, ImageIcon, Upload,
+  Camera, Edit3, Save, XCircle, UserCircle
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 const ADMIN_EMAIL = 'ameng307@gmail.com';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -499,6 +500,235 @@ const AdminOrders = () => {
   );
 };
 
+// ═══════════════════════════════════════════════════════════════════════════
+// USER PROFILE EDIT
+// ═══════════════════════════════════════════════════════════════════════════
+
+const UserProfile = () => {
+  const { user, setUser } = useAuth();
+  const fileInputRef = useRef(null);
+
+  const [form, setForm] = useState({ fullName: user?.fullName || '', bio: user?.bio || '' });
+  const [avatar, setAvatar] = useState(user?.avatar || '');
+  const [avatarPreview, setAvatarPreview] = useState(user?.avatar || '');
+  const [saving, setSaving] = useState(false);
+  const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
+  const [editing, setEditing] = useState(false);
+
+  useEffect(() => {
+    setForm({ fullName: user?.fullName || '', bio: user?.bio || '' });
+    setAvatar(user?.avatar || '');
+    setAvatarPreview(user?.avatar || '');
+  }, [user]);
+
+  const handleAvatarChange = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    try {
+      const base64 = await compressImageFile(file);
+      setAvatarPreview(base64);
+      setAvatar(base64);
+    } catch {
+      setError('Image load nahi hui. Doosri image try karein.');
+    }
+  };
+
+  const handleRemoveAvatar = () => {
+    setAvatarPreview('');
+    setAvatar('');
+    if (fileInputRef.current) fileInputRef.current.value = '';
+  };
+
+  const handleSave = async (e) => {
+    e.preventDefault();
+    setError(''); setSuccess('');
+    if (!form.fullName.trim()) { setError('Name required hai.'); return; }
+    setSaving(true);
+    try {
+      const token = localStorage.getItem('am_token');
+      const res = await axios.put(
+        `${API_BASE}/auth/profile`,
+        { fullName: form.fullName, bio: form.bio, avatar },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      setUser(prev => ({ ...prev, ...res.data.user }));
+      setSuccess('Profile successfully update ho gayi! ✅');
+      setEditing(false);
+      setTimeout(() => setSuccess(''), 3500);
+    } catch (err) {
+      setError(err.response?.data?.message || 'Profile save nahi hui. Dobara koshish karein.');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleCancel = () => {
+    setForm({ fullName: user?.fullName || '', bio: user?.bio || '' });
+    setAvatarPreview(user?.avatar || '');
+    setAvatar(user?.avatar || '');
+    setError(''); setSuccess('');
+    setEditing(false);
+  };
+
+  const initials = getInitials(user?.fullName || '');
+
+  return (
+    <div className="max-w-xl mx-auto">
+      <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-6" style={{ fontFamily: 'Outfit, sans-serif' }}>
+        My <span className="text-brand-blue">Profile</span>
+      </h2>
+
+      <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
+        className="bg-white dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+
+        {/* Header banner */}
+        <div className="h-24 bg-gradient-to-r from-brand-blue via-blue-500 to-indigo-500 relative">
+          <div className="absolute inset-0 opacity-20"
+            style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px)' }} />
+        </div>
+
+        <div className="px-6 pb-6">
+          {/* Avatar + name row */}
+          <div className="flex items-end gap-4 -mt-10 mb-5">
+            <div className="relative flex-shrink-0">
+              {avatarPreview ? (
+                <img src={avatarPreview} alt="Profile"
+                  className="w-20 h-20 rounded-2xl object-cover border-4 border-white dark:border-slate-800 shadow-lg" />
+              ) : (
+                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-blue to-blue-500 border-4 border-white dark:border-slate-800 shadow-lg flex items-center justify-center text-white text-2xl font-extrabold">
+                  {initials}
+                </div>
+              )}
+              {editing && (
+                <button type="button" onClick={() => fileInputRef.current?.click()}
+                  className="absolute -bottom-1.5 -right-1.5 w-7 h-7 rounded-lg bg-brand-blue hover:bg-blue-700 text-white flex items-center justify-center shadow-md transition-all hover:scale-110">
+                  <Camera size={13} />
+                </button>
+              )}
+            </div>
+            <div className="pb-1 flex-1 min-w-0">
+              <p className="text-lg font-extrabold text-slate-900 dark:text-white truncate">{user?.fullName}</p>
+              <p className="text-xs text-slate-400 truncate">{user?.email}</p>
+            </div>
+            {!editing && (
+              <button onClick={() => setEditing(true)}
+                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-blue hover:bg-blue-700 text-white text-sm font-semibold transition-all hover:scale-105 shadow-sm mb-1">
+                <Edit3 size={14} /> Edit Profile
+              </button>
+            )}
+          </div>
+
+          <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={handleAvatarChange} />
+
+          {/* View mode */}
+          {!editing ? (
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-700/50">
+                <User size={16} className="text-brand-blue flex-shrink-0" />
+                <div className="min-w-0">
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Full Name</p>
+                  <p className="text-sm font-semibold text-slate-900 dark:text-white truncate">{user?.fullName}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-700/50">
+                <Mail size={16} className="text-brand-blue flex-shrink-0" />
+                <div className="min-w-0">
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Email</p>
+                  <p className="text-sm font-semibold text-slate-900 dark:text-white truncate">{user?.email}</p>
+                </div>
+              </div>
+              {user?.bio ? (
+                <div className="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-700/50">
+                  <UserCircle size={16} className="text-brand-blue flex-shrink-0 mt-0.5" />
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">About</p>
+                    <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">{user.bio}</p>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-xs text-slate-400 text-center py-2">
+                  Koi bio nahi — Edit karein aur apne baare mein kuch likhein!
+                </p>
+              )}
+              {success && (
+                <div className="flex items-center gap-2 p-3 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 text-emerald-600 dark:text-emerald-400 text-sm">
+                  <CheckCircle2 size={15} /> {success}
+                </div>
+              )}
+            </div>
+          ) : (
+            /* Edit mode form */
+            <form onSubmit={handleSave} className="space-y-4">
+              {avatarPreview ? (
+                <div className="flex items-center gap-3">
+                  <button type="button" onClick={handleRemoveAvatar}
+                    className="flex items-center gap-1.5 text-xs text-red-500 hover:text-red-600 font-semibold transition-colors">
+                    <XCircle size={13} /> Remove photo
+                  </button>
+                  <span className="text-xs text-slate-300 dark:text-slate-600">|</span>
+                  <button type="button" onClick={() => fileInputRef.current?.click()}
+                    className="flex items-center gap-1.5 text-xs text-brand-blue hover:text-blue-700 font-semibold transition-colors">
+                    <Camera size={13} /> Change photo
+                  </button>
+                </div>
+              ) : (
+                <button type="button" onClick={() => fileInputRef.current?.click()}
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border-2 border-dashed border-brand-blue/40 hover:border-brand-blue text-brand-blue hover:bg-brand-blue/5 text-sm font-semibold transition-all">
+                  <Upload size={15} /> Photo upload karein
+                </button>
+              )}
+
+              <div>
+                <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-1.5">Full Name *</label>
+                <input
+                  value={form.fullName}
+                  onChange={e => setForm(p => ({ ...p, fullName: e.target.value }))}
+                  placeholder="Apna poora naam likhein"
+                  required
+                  className="w-full bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 transition-all"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-1.5">About / Bio</label>
+                <textarea
+                  value={form.bio}
+                  onChange={e => setForm(p => ({ ...p, bio: e.target.value }))}
+                  placeholder="Apne baare mein kuch likhein (optional)..."
+                  rows={3}
+                  maxLength={200}
+                  className="w-full bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 transition-all resize-none"
+                />
+                <p className="text-right text-xs text-slate-400 mt-1">{form.bio.length}/200</p>
+              </div>
+
+              {error && (
+                <div className="flex items-center gap-2 p-3 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 text-sm">
+                  <AlertCircle size={15} /> {error}
+                </div>
+              )}
+
+              <div className="flex gap-3 pt-1">
+                <button type="button" onClick={handleCancel}
+                  className="flex-1 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                  Cancel
+                </button>
+                <button type="submit" disabled={saving}
+                  className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-brand-blue to-blue-500 text-white text-sm font-bold shadow-[0_4px_14px_rgba(37,99,235,0.35)] hover:scale-[1.02] transition-all disabled:opacity-70 disabled:cursor-not-allowed disabled:scale-100">
+                  {saving ? <Loader2 size={15} className="animate-spin" /> : <Save size={15} />}
+                  {saving ? 'Saving...' : 'Save Changes'}
+                </button>
+              </div>
+            </form>
+          )}
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+
 // ═══════════════════════════════════════════════════════════════════════════════
 // USER VIEWS
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -622,6 +852,7 @@ const DashboardPage = () => {
   const userTabs = [
     { id: 'orders', label: 'My Orders', icon: ShoppingBag },
     { id: 'messages', label: 'My Messages', icon: MessageSquare },
+    { id: 'profile', label: 'My Profile', icon: User },
   ];
 
   const tabs = isAdmin ? adminTabs : userTabs;
@@ -638,6 +869,7 @@ const DashboardPage = () => {
     } else {
       if (activeTab === 'orders') return <UserOrders />;
       if (activeTab === 'messages') return <UserMessages />;
+      if (activeTab === 'profile') return <UserProfile />;
     }
   };
 
@@ -669,9 +901,13 @@ const DashboardPage = () => {
               <ArrowLeft size={14} /> Site
             </button>
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-blue to-blue-500 flex items-center justify-center text-white text-xs font-extrabold">
-                {getInitials(user?.fullName || '')}
-              </div>
+              {user?.avatar ? (
+                <img src={user.avatar} alt="avatar" className="w-8 h-8 rounded-full object-cover border-2 border-brand-blue/30" />
+              ) : (
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-blue to-blue-500 flex items-center justify-center text-white text-xs font-extrabold">
+                  {getInitials(user?.fullName || '')}
+                </div>
+              )}
               <div className="hidden md:block">
                 <p className="text-sm font-bold text-slate-900 dark:text-white leading-none">{user?.fullName}</p>
                 <p className="text-xs text-slate-400">{user?.email}</p>
@@ -687,7 +923,11 @@ const DashboardPage = () => {
         <aside className="hidden md:flex w-56 flex-col bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 p-4 gap-1">
           {/* User info mini */}
           <div className="flex items-center gap-3 px-3 py-3 mb-3 border-b border-slate-100 dark:border-slate-800">
-            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-brand-blue to-blue-500 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">{getInitials(user?.fullName || '')}</div>
+            {user?.avatar ? (
+              <img src={user.avatar} alt="avatar" className="w-9 h-9 rounded-full object-cover flex-shrink-0 border-2 border-brand-blue/30" />
+            ) : (
+              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-brand-blue to-blue-500 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">{getInitials(user?.fullName || '')}</div>
+            )}
             <div className="min-w-0">
               <p className="text-sm font-bold text-slate-900 dark:text-white truncate">{user?.fullName}</p>
               <p className="text-xs text-slate-400 truncate">{isAdmin ? '🔴 Admin' : '🟢 User'}</p>

@@ -99,15 +99,15 @@ const Navbar = () => {
           {/* Logo */}
           <a href="#home" className="flex items-center space-x-2.5 group" id="nav-logo">
             <img
-              src="/logo.png"
+              src="/logo.jpg"
               alt="A.M Engineering & Elevators Logo"
-              className="w-9 h-9 rounded-full object-cover ring-2 ring-blue-500/30 group-hover:scale-105 transition-transform"
+              className="w-10 h-10 rounded-full object-cover object-center ring-2 ring-yellow-500/40 group-hover:scale-105 transition-transform shadow-md"
             />
-            <div className="flex flex-col leading-tight">
-              <span className="text-base sm:text-lg font-extrabold tracking-tight text-slate-900 dark:text-white uppercase hidden sm:block" style={{ fontFamily: 'Outfit, sans-serif' }}>
+            <div className="flex flex-col leading-tight hidden sm:flex">
+              <span className="text-base sm:text-lg font-extrabold tracking-tight text-slate-900 dark:text-white uppercase" style={{ fontFamily: 'Outfit, sans-serif' }}>
                 A.M <span className="text-blue-600 dark:text-blue-400">Engineering</span>
               </span>
-              <span className="text-[9px] font-bold tracking-[0.16em] uppercase hidden sm:block text-slate-500 dark:text-slate-400">&amp; Elevators</span>
+              <span className="text-[9px] font-bold tracking-[0.16em] uppercase text-slate-500 dark:text-slate-400">&amp; Elevators</span>
             </div>
             <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white uppercase sm:hidden" style={{ fontFamily: 'Outfit, sans-serif' }}>A.M</span>
           </a>
@@ -174,9 +174,17 @@ const Navbar = () => {
                   onClick={() => setProfileDropdown(!profileDropdown)}
                   className="flex items-center gap-2 pl-1 pr-3 py-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
                 >
-                  <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-extrabold shadow-sm ring-2 ring-white dark:ring-slate-800">
-                    {getInitials(user.fullName)}
-                  </div>
+                  {user?.avatar ? (
+                    <img
+                      src={user.avatar}
+                      alt={user.fullName}
+                      className="w-8 h-8 rounded-full object-cover shadow-sm ring-2 ring-white dark:ring-slate-800"
+                    />
+                  ) : (
+                    <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-extrabold shadow-sm ring-2 ring-white dark:ring-slate-800">
+                      {getInitials(user.fullName)}
+                    </div>
+                  )}
                   <span className="text-xs font-semibold text-slate-700 dark:text-slate-200 max-w-[100px] truncate">
                     {user.fullName}
                   </span>
@@ -240,9 +248,13 @@ const Navbar = () => {
               <button
                 id="mobile-profile-avatar"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-bold"
+                className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center text-white text-xs font-bold bg-blue-600"
               >
-                {getInitials(user.fullName)}
+                {user?.avatar ? (
+                  <img src={user.avatar} alt={user.fullName} className="w-full h-full object-cover" />
+                ) : (
+                  getInitials(user.fullName)
+                )}
               </button>
             )}
 
@@ -269,8 +281,12 @@ const Navbar = () => {
             >
               {user && (
                 <div className="px-3 py-2.5 mb-1 border-b border-slate-100 dark:border-slate-800 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-bold">
-                    {getInitials(user.fullName)}
+                  <div className="w-9 h-9 rounded-full overflow-hidden bg-blue-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                    {user?.avatar ? (
+                      <img src={user.avatar} alt={user.fullName} className="w-full h-full object-cover" />
+                    ) : (
+                      getInitials(user.fullName)
+                    )}
                   </div>
                   <div>
                     <p className="text-sm font-bold text-slate-900 dark:text-white">{user.fullName}</p>

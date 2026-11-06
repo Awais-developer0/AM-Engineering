@@ -118,10 +118,47 @@ router.get("/me", verifyToken, async (req, res) => {
             return res.status(404).json({ message: "User not found", isError: true })
         }
         res.status(200).json({
-            user: { uid: user.uid, fullName: user.fullName, email: user.email, createdAt: user.createdAt }
+            user: { uid: user.uid, fullName: user.fullName, email: user.email, avatar: user.avatar || '', bio: user.bio || '', createdAt: user.createdAt }
         })
     } catch (error) {
         console.error("Me error:", error)
+        res.status(500).json({ message: "Internal server error", isError: true })
+    }
+})
+
+// ─── PUT /auth/profile (protected) ─────────────────────────────────────────
+router.put("/profile", verifyToken, async (req, res) => {
+    try {
+        const { fullName, bio, avatar } = req.body
+
+        if (!fullName || fullName.trim().length < 2) {
+            return res.status(400).json({ message: "Full name must be at least 2 characters", isError: true })
+        }
+
+        // avatar is base64 string — limit size (~700 KB max)
+        if (avatar && avatar.length > 700000) {
+            return res.status(400).json({ message: "Image size too large. Please use a smaller image.", isError: true })
+        }
+
+        const updateData = { fullName: fullName.trim(), bio: (bio || '').trim() }
+        if (avatar !== undefined) updateData.avatar = avatar
+
+        const updatedUser = await Users.findOneAndUpdate(
+            { uid: req.user.uid },
+            { $set: updateData },
+            { new: true, select: "-password" }
+        )
+
+        if (!updatedUser) {
+            return res.status(404).json({ message: "User not found", isError: true })
+        }
+
+        res.status(200).json({
+            message: "Profile updated successfully!",
+            user: { uid: updatedUser.uid, fullName: updatedUser.fullName, email: updatedUser.email, avatar: updatedUser.avatar || '', bio: updatedUser.bio || '' }
+        })
+    } catch (error) {
+        console.error("Profile update error:", error)
         res.status(500).json({ message: "Internal server error", isError: true })
     }
 })

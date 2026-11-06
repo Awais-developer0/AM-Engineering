@@ -28,3 +28,5 @@ app.get("/", (req, res) => {
 app.get("/health", (req, res) => {
     res.send("Server health is good")
 })
+
+//mongodb+srv://awaisdeveloper22_db_user:<db_password>@cluster0.k4f4wml.mongodb.net/
