@@ -52,10 +52,6 @@ const whyItems = [
 ];
 
 const Services = () => {
-  useEffect(() => {
-    document.title = "Passenger & Cargo Lifts, Overhead Cranes & Mill Parts | A.M Engineering & Elevators";
-  }, []);
-
   const servicesData = [
     {
       icon: ArrowUpCircle,

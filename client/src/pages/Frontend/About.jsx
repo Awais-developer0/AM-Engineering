@@ -166,10 +166,6 @@ const StatCard = ({ icon: Icon, label, value, suffix, subtitle, color, index }) 
 const AboutUs = () => {
   const [activeTab, setActiveTab] = useState('All Lifts');
 
-  useEffect(() => {
-    document.title = "About Us | AM Engineering And Elevators Faisalabad";
-  }, []);
-
   const filteredLifts = activeTab === 'All Lifts'
     ? liftProjects
     : liftProjects.filter(p => p.category === activeTab);

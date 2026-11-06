@@ -70,10 +70,6 @@ const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    document.title = "Contact Details & Location | A.M Engineering & Elevators";
-  }, []);
-
   const [form, setForm] = useState({
     firstName: '', lastName: '', email: user?.email || '', phone: '', service: 'Passenger Lift Installation', message: ''
   });

@@ -567,10 +567,6 @@ const SpareParts = () => {
   const [products, setProducts] = useState(DEFAULT_PRODUCTS);
   const [loadingProducts, setLoadingProducts] = useState(true);
 
-  useEffect(() => {
-    document.title = "Gears, Mill Parts, Lifts & Cranes Catalog | A.M Engineering & Elevators";
-  }, []);
-
   const fetchProducts = () => {
     setLoadingProducts(true);
     axios.get(`${API_BASE}/products`)
