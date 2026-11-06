@@ -1,0 +1,12 @@
+# robots.txt for A.M Engineering & Elevators
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /dashboard
+
+# Crawl-delay for optimal server performance
+Crawl-delay: 1
+
+# Canonical Sitemap URL
+Sitemap: https://amengineeringelevators.com/sitemap.xml
+
