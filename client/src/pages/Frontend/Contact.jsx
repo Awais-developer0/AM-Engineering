@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://am-engineering-server.onrender.com';
 
 const FloatingInput = ({ id, label, type = 'text', required, value, onChange }) => {
   const [focused, setFocused] = useState(false);
@@ -105,7 +105,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 bg-slate-50 dark:bg-slate-950 relative overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        
+
         {/* Header */}
         <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-4 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
@@ -146,7 +146,7 @@ const Contact = () => {
         </motion.a>
 
         <div className="grid lg:grid-cols-2 gap-10">
-          
+
           {/* Left Column: Details & Map */}
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div className="space-y-3.5 mb-8">
@@ -260,7 +260,7 @@ const Contact = () => {
                   </div>
                   <FloatingInput id="contact-email" label="Email Address" type="email" required value={form.email} onChange={set('email')} />
                   <FloatingInput id="contact-phone" label="Phone Number" type="tel" value={form.phone} onChange={set('phone')} />
-                  
+
                   <div className="space-y-1.5">
                     <label htmlFor="contact-service" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Service Required

@@ -5,7 +5,7 @@ import { X, Eye, EyeOff, Loader2, CheckCircle2, AlertCircle, Settings, ArrowRigh
 import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://am-engineering-server.onrender.com';
 
 // ─── Input Field Component ────────────────────────────────────────────────────
 const InputField = ({ label, type, id, value, onChange, placeholder, error }) => {

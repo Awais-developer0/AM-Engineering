@@ -10,7 +10,7 @@ import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://am-engineering-server.onrender.com';
 const ADMIN_EMAIL = 'ameng307@gmail.com';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -62,10 +62,10 @@ const formatDate = (d) => new Date(d).toLocaleDateString('en-PK', { day: 'numeri
 
 const StatusBadge = ({ status }) => {
   const map = {
-    pending:    'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 border-amber-200 dark:border-amber-800',
+    pending: 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 border-amber-200 dark:border-amber-800',
     processing: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 border-blue-200 dark:border-blue-800',
-    completed:  'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800',
-    cancelled:  'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 border-red-200 dark:border-red-800',
+    completed: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800',
+    cancelled: 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 border-red-200 dark:border-red-800',
   };
   const icons = { pending: <Clock size={12} />, processing: <Loader2 size={12} className="animate-spin" />, completed: <CheckCircle2 size={12} />, cancelled: <AlertCircle size={12} /> };
   return (
@@ -177,7 +177,7 @@ const AdminProducts = () => {
         <div className="flex gap-2">
           <button onClick={fetchProducts} title="Refresh" className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all text-slate-500"><RefreshCw size={16} /></button>
           <button onClick={() => setShowForm(!showForm)}
-            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${ showForm ? 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300' : 'bg-gradient-to-r from-brand-blue to-blue-500 text-white shadow-[0_4px_14px_rgba(37,99,235,0.35)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.5)] hover:scale-[1.02]' }`}>
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${showForm ? 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300' : 'bg-gradient-to-r from-brand-blue to-blue-500 text-white shadow-[0_4px_14px_rgba(37,99,235,0.35)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.5)] hover:scale-[1.02]'}`}>
             <PlusCircle size={16} /> {showForm ? 'Cancel' : '+ Add New Spare Part'}
           </button>
         </div>
@@ -313,7 +313,7 @@ const AdminProducts = () => {
                   <div className="w-full h-full flex items-center justify-center"><ImageIcon size={32} className="text-slate-300 dark:text-slate-600" /></div>
                 )}
                 <div className="absolute top-2 right-2">
-                  <span className={`px-2 py-0.5 text-[10px] font-bold rounded-full ${ p.stockStatus === 'In Stock' ? 'bg-emerald-500 text-white' : p.stockStatus === 'Low Stock' ? 'bg-orange-500 text-white' : 'bg-red-500 text-white' }`}>{p.stockStatus}</span>
+                  <span className={`px-2 py-0.5 text-[10px] font-bold rounded-full ${p.stockStatus === 'In Stock' ? 'bg-emerald-500 text-white' : p.stockStatus === 'Low Stock' ? 'bg-orange-500 text-white' : 'bg-red-500 text-white'}`}>{p.stockStatus}</span>
                 </div>
               </div>
               <div className="p-4">
@@ -481,11 +481,10 @@ const AdminOrders = () => {
                 <div className="flex flex-wrap gap-2">
                   {statusFlow[order.status].map((s) => (
                     <button key={s} onClick={() => updateStatus(order._id, s)} disabled={updating === order._id}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border capitalize flex items-center gap-1.5 ${
-                        s === 'completed' ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100' :
-                        s === 'processing' ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800 hover:bg-blue-100' :
-                        'bg-red-50 dark:bg-red-900/20 text-red-500 border-red-200 dark:border-red-800 hover:bg-red-100'
-                      }`}>
+                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border capitalize flex items-center gap-1.5 ${s === 'completed' ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100' :
+                          s === 'processing' ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800 hover:bg-blue-100' :
+                            'bg-red-50 dark:bg-red-900/20 text-red-500 border-red-200 dark:border-red-800 hover:bg-red-100'
+                        }`}>
                       {updating === order._id ? <Loader2 size={12} className="animate-spin" /> : null}
                       Mark as {s}
                     </button>

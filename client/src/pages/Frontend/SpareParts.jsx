@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://am-engineering-server.onrender.com';
 
 const compressImageFile = (file) => {
   return new Promise((resolve, reject) => {
@@ -610,7 +610,7 @@ const SpareParts = () => {
   return (
     <section id="shop" className="py-20 md:py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300 border-b border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-        
+
         {/* Header - H2 Section Title */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
           <div className="max-w-2xl">
@@ -659,11 +659,10 @@ const SpareParts = () => {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 id={`filter-${cat.replace(/[^a-zA-Z]/g, '-').toLowerCase()}`}
-                className={`whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 flex-shrink-0 ${
-                  active
+                className={`whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 flex-shrink-0 ${active
                     ? 'bg-blue-600 text-white shadow-sm'
                     : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'
-                }`}
+                  }`}
               >
                 {cat}
               </button>
