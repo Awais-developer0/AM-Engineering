@@ -40,7 +40,6 @@ const footerLinks = {
     { label: 'Our Services', href: '#services' },
     { label: 'Lift Estimator', href: '#estimator' },
     { label: 'Safety Standards', href: '#standards' },
-    { label: 'Spare Parts', href: '#shop' },
     { label: 'FAQs', href: '#faq' },
     { label: 'Contact', href: '#contact' },
   ],
@@ -50,7 +49,7 @@ const footerLinks = {
     { label: 'Panoramic Glass Lifts', href: '#about' },
     { label: 'Overhead Cranes', href: '#services' },
     { label: 'Conveyors', href: '#services' },
-    { label: 'Spinning & Mill Parts', href: '#shop' },
+    { label: 'Spinning & Mill Parts', href: '#services' },
   ],
 };
 

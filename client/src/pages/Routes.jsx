@@ -28,7 +28,6 @@ const Routes = () => {
         {/* Public: Main Website & Public Routes for SEO */}
         <Route path="/" element={<FrontendLayout />} />
         <Route path="/services" element={<FrontendLayout />} />
-        <Route path="/spare-parts" element={<FrontendLayout />} />
         <Route path="/safety-standards" element={<FrontendLayout />} />
         <Route path="/contact" element={<FrontendLayout />} />
 

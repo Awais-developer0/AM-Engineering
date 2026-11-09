@@ -11,13 +11,11 @@ import About from './About';                 // #about
 import Services from './Services';           // #services
 import SafetyStandards from './SafetyStandards'; // #standards
 import LiftEstimator from './LiftEstimator'; // #estimator
-import SpareParts from './SpareParts';       // #shop
 import FAQSection from './FAQSection';       // #faq
 import Contact from './Contact';             // #contact
 
 const ROUTE_SECTION_MAP = {
   '/services': 'services',
-  '/spare-parts': 'shop',
   '/safety-standards': 'standards',
   '/contact': 'contact',
 };
@@ -50,7 +48,6 @@ const FrontendLayout = () => {
         <Services />
         <SafetyStandards />
         <LiftEstimator />
-        <SpareParts />
         <FAQSection />
         <Contact />
       </main>
