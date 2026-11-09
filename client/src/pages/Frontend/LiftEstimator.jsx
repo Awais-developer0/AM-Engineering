@@ -100,7 +100,7 @@ I would like an official quotation for an elevator:
 - Machine Drive: ${selectedDrive.label}
 
 Please share the estimated price, shaft structural requirements, and delivery timeline.`;
-    return `https://wa.me/923206579307?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/923064854418?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -331,18 +331,18 @@ Please share the estimated price, shaft structural requirements, and delivery ti
 
                 <div className="flex items-center gap-3">
                   <a
-                    href="tel:+923206579307"
-                    className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold transition-all"
-                  >
-                    <Phone size={14} className="text-blue-400" />
-                    <span>0320-657 9307</span>
-                  </a>
-                  <a
                     href="tel:+923064854418"
                     className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold transition-all"
                   >
                     <Phone size={14} className="text-blue-400" />
                     <span>0306-485 4418</span>
+                  </a>
+                  <a
+                    href="tel:+923206579307"
+                    className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold transition-all"
+                  >
+                    <Phone size={14} className="text-blue-400" />
+                    <span>0320-657 9307</span>
                   </a>
                 </div>
               </div>

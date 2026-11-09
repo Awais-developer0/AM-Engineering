@@ -120,14 +120,14 @@ const NotFound = () => {
           </Link>
 
           <a
-            href="https://wa.me/923206579307"
+            href="https://wa.me/923064854418"
             target="_blank"
             rel="noopener noreferrer"
             id="not-found-contact-btn"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
           >
             <Phone size={15} className="text-emerald-500" />
-            <span>Contact Partners: 0320-657 9307</span>
+            <span>Contact Partners: 0306-485 4418</span>
           </a>
         </motion.div>
 

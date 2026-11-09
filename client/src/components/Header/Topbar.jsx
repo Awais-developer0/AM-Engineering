@@ -7,16 +7,16 @@ const Topbar = () => {
       {/* Blue top accent line */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-600 via-sky-400 to-blue-600" />
 
-      <div className="py-2 px-4 md:px-8 flex flex-row justify-between items-center text-[10px] md:text-[11px] uppercase tracking-wider font-semibold">
+      <div className="py-2 px-4 md:px-8 flex flex-row justify-between items-center text-[10px] md:text-[11px]  tracking-wider font-semibold">
         {/* Left: Contact Info */}
         <div className="flex items-center space-x-4 md:space-x-6">
+          <a href="https://wa.me/923064854418" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors group" title="Noor Ahmed">
+            <Phone size={13} className="text-blue-400 group-hover:scale-110 transition-transform" />
+            <span className="hidden sm:inline">0306-485 4418</span>
+          </a>
           <a href="https://wa.me/923206579307" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors group" title="M. Naseer">
             <Phone size={13} className="text-blue-400 group-hover:scale-110 transition-transform" />
             <span className="hidden sm:inline">0320-657 9307</span>
-          </a>
-          <a href="https://wa.me/923064854418" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors group" title="M. Naseer">
-            <Phone size={13} className="text-blue-400 group-hover:scale-110 transition-transform" />
-            <span className="hidden sm:inline">0306-4854418</span>
           </a>
 
           <a href="https://goo.gl/maps/tnQpavkiijQUSBTX7" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:text-white transition-colors group" title="Location">
@@ -32,7 +32,7 @@ const Topbar = () => {
         {/* Right: WhatsApp CTA + Facebook */}
         <div className="flex items-center space-x-3">
           <a
-            href="https://wa.me/923206579307"
+            href="https://wa.me/923064854418"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-[10px] tracking-wider transition-all hover:scale-105 shadow-sm"

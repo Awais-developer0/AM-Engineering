@@ -137,12 +137,12 @@ const Hero = () => {
               <ArrowRight size={16} />
             </a>
             <a
-              href="tel:+923206579307"
+              href="tel:+923064854418"
               id="hero-call-now"
               className="inline-flex justify-center items-center gap-2 px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold rounded-xl text-sm transition-all duration-200 backdrop-blur-sm hover:scale-[1.02] active:scale-95"
             >
               <Phone size={15} className="text-blue-400" />
-              <span>Call: 0320-657 9307</span>
+              <span>Call: 0306-485 4418</span>
             </a>
           </div>
 
@@ -175,24 +175,7 @@ const Hero = () => {
             </div>
             
             <div className="grid sm:grid-cols-2 gap-4">
-              {/* Partner 1: M. Naseer */}
-              <div className="flex items-center gap-3.5 bg-slate-800/60 rounded-xl p-3 border border-slate-700/40">
-                <div className="relative flex-shrink-0">
-                  <div className="w-11 h-11 rounded-xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-300 font-extrabold text-base" style={{ fontFamily: 'Outfit, sans-serif' }}>
-                    MN
-                  </div>
-                  <div className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-slate-900" />
-                </div>
-                <div className="min-w-0">
-                  <div className="flex items-center gap-2">
-                    <span className="font-bold text-white text-sm" style={{ fontFamily: 'Outfit, sans-serif' }}>M. Naseer</span>
-                    <span className="text-[10px] font-bold text-blue-300 bg-blue-500/20 px-2 py-0.5 rounded-full">Partner</span>
-                  </div>
-                  <p className="text-slate-300 text-xs mt-0.5 font-medium">+92 320 657 9307</p>
-                </div>
-              </div>
-
-              {/* Partner 2: Noor Ahmed */}
+              {/* Partner 1: Noor Ahmed */}
               <div className="flex items-center gap-3.5 bg-slate-800/60 rounded-xl p-3 border border-slate-700/40">
                 <div className="relative flex-shrink-0">
                   <div className="w-11 h-11 rounded-xl bg-sky-600/20 border border-sky-500/40 flex items-center justify-center text-sky-300 font-extrabold text-base" style={{ fontFamily: 'Outfit, sans-serif' }}>
@@ -206,6 +189,23 @@ const Hero = () => {
                     <span className="text-[10px] font-bold text-sky-300 bg-sky-500/20 px-2 py-0.5 rounded-full">Partner</span>
                   </div>
                   <p className="text-slate-300 text-xs mt-0.5 font-medium">+92 306 485 4418</p>
+                </div>
+              </div>
+
+              {/* Partner 2: M. Naseer */}
+              <div className="flex items-center gap-3.5 bg-slate-800/60 rounded-xl p-3 border border-slate-700/40">
+                <div className="relative flex-shrink-0">
+                  <div className="w-11 h-11 rounded-xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-300 font-extrabold text-base" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                    MN
+                  </div>
+                  <div className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-slate-900" />
+                </div>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold text-white text-sm" style={{ fontFamily: 'Outfit, sans-serif' }}>M. Naseer</span>
+                    <span className="text-[10px] font-bold text-blue-300 bg-blue-500/20 px-2 py-0.5 rounded-full">Partner</span>
+                  </div>
+                  <p className="text-slate-300 text-xs mt-0.5 font-medium">+92 320 657 9307</p>
                 </div>
               </div>
             </div>

@@ -39,7 +39,7 @@ const FloatingContact = () => {
 
             <div className="space-y-2">
               <a
-                href="https://wa.me/923206579307?text=Assalam-o-Alaikum%20A.M%20Engineering,%20I%20am%20interested%20in%20an%20elevator%20quotation."
+                href="https://wa.me/923064854418?text=Assalam-o-Alaikum%20A.M%20Engineering,%20I%20am%20interested%20in%20an%20elevator%20quotation."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-md"
@@ -54,12 +54,12 @@ const FloatingContact = () => {
               </a>
 
               <a
-                href="tel:+923206579307"
+                href="tel:+923064854418"
                 className="flex items-center justify-between p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold transition-all"
               >
                 <div className="flex items-center gap-2">
                   <Phone size={14} className="text-blue-400" />
-                  <span>Call: 0320-657 9307</span>
+                  <span>Call: 0306-485 4418</span>
                 </div>
                 <ArrowUpRight size={14} className="text-slate-400" />
               </a>

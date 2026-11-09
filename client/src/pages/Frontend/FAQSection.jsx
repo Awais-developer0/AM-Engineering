@@ -143,20 +143,20 @@ const FAQSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="https://wa.me/923206579307"
+              href="https://wa.me/923064854418"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-sm"
             >
               <MessageCircle size={15} />
-              <span>Ask on WhatsApp (0320-657 9307)</span>
+              <span>Ask on WhatsApp (0306-485 4418)</span>
             </a>
             <a
-              href="tel:+923064854418"
+              href="tel:+923206579307"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-900 dark:text-white text-xs font-bold uppercase tracking-wider transition-all"
             >
               <PhoneCall size={15} className="text-blue-600 dark:text-blue-400" />
-              <span>Call Noor Ahmed (0306-485 4418)</span>
+              <span>Call M. Naseer (0320-657 9307)</span>
             </a>
           </div>
         </div>

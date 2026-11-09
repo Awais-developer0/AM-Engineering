@@ -59,7 +59,7 @@ const FloatingTextarea = ({ id, label, rows = 4, value, onChange }) => {
 
 const contactItems = [
   { icon: MapPin, title: 'Workshop Address', content: 'Crescent Sugar Mill Road\nNear Shakeel Park Qabristan\nFaisalabad, Pakistan', href: 'https://goo.gl/maps/tnQpavkiijQUSBTX7' },
-  { icon: Phone, title: 'Direct Partner Numbers', content: 'M. Naseer: +92 320 657 9307\nNoor Ahmed: +92 306 485 4418', href: 'https://wa.me/923206579307' },
+  { icon: Phone, title: 'Direct Partner Numbers', content: 'Noor Ahmed: +92 306 485 4418\nM. Naseer: +92 320 657 9307', href: 'https://wa.me/923064854418' },
   { icon: Mail, title: 'Email Address', content: 'ameng307@gmail.com', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=ameng307@gmail.com' },
   { icon: Clock, title: 'Operating Hours', content: 'Mon – Sat: 8:00 AM – 6:00 PM\nSunday: Emergency Orders Only' },
 ];
@@ -121,7 +121,7 @@ const Contact = () => {
 
         {/* WhatsApp Quick Connect Banner */}
         <motion.a
-          href="https://wa.me/923206579307"
+          href="https://wa.me/923064854418"
           target="_blank"
           rel="noopener noreferrer"
           id="whatsapp-contact-banner"
@@ -139,7 +139,7 @@ const Contact = () => {
             </div>
             <div>
               <div className="font-bold text-slate-900 dark:text-white text-sm">Quick Connect via WhatsApp</div>
-              <div className="text-slate-500 dark:text-slate-400 text-xs mt-0.5">M. Naseer: 0320-657 9307 · Noor Ahmed: 0306-485 4418</div>
+              <div className="text-slate-500 dark:text-slate-400 text-xs mt-0.5">Noor Ahmed: 0306-485 4418 · M. Naseer: 0320-657 9307</div>
             </div>
           </div>
           <ArrowRight size={18} className="text-blue-600 dark:text-blue-400 group-hover:translate-x-1 transition-transform flex-shrink-0" />

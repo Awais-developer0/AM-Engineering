@@ -245,7 +245,7 @@ const AboutUs = () => {
                     Managed by Experienced Lift Engineers
                   </h3>
                   <p className="text-blue-100 text-xs sm:text-sm mt-0.5 leading-relaxed">
-                    Partners <strong>M. Naseer (0320-657 9307)</strong> &amp; <strong>Noor Ahmed (0306-485 4418)</strong> personally supervise shaft geometry, safety testing, and nationwide commissioning.
+                    Partners <strong>Noor Ahmed (0306-485 4418)</strong> &amp; <strong>M. Naseer (0320-657 9307)</strong> personally supervise shaft geometry, safety testing, and nationwide commissioning.
                   </p>
                 </div>
               </div>

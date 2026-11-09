@@ -214,8 +214,8 @@ const Footer = () => {
                 <li className="flex items-center gap-3 text-slate-400 text-sm">
                   <Phone size={16} className="text-blue-400 flex-shrink-0" />
                   <div className="flex flex-col gap-0.5">
-                    <a href="https://wa.me/923206579307" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">M. Naseer: 0320-657 9307</a>
-                    <a href="tel:+923064854418" className="hover:text-white transition-colors">Noor Ahmed: 0306-485 4418</a>
+                    <a href="https://wa.me/923064854418" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Noor Ahmed: 0306-485 4418</a>
+                    <a href="tel:+923206579307" className="hover:text-white transition-colors">M. Naseer: 0320-657 9307</a>
                   </div>
                 </li>
                 <li className="flex items-center gap-3 text-slate-400 text-sm">
