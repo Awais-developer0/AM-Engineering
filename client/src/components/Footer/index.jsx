@@ -77,7 +77,7 @@ const Footer = () => {
 
       <footer className="bg-slate-900 text-slate-300 relative overflow-hidden transition-colors duration-300 border-t border-slate-800">
         {/* Subtle accent line */}
-        <div className="h-1 bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-400" />
+        <div className="h-[2px] bg-slate-800" />
 
         {/* Newsletter Section */}
         <div className="relative border-b border-slate-800/80">

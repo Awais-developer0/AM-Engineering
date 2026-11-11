@@ -4,8 +4,8 @@ import { Phone, MapPin, Mail } from 'lucide-react';
 const Topbar = () => {
   return (
     <div className="pointer-events-auto relative bg-slate-900 text-slate-300 transition-colors duration-300 overflow-hidden border-b border-slate-800">
-      {/* Blue top accent line */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-600 via-sky-400 to-blue-600" />
+      {/* Subtle top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-slate-700/80" />
 
       <div className="py-2 px-4 md:px-8 flex flex-row justify-between items-center text-[10px] md:text-[11px]  tracking-wider font-semibold">
         {/* Left: Contact Info */}
