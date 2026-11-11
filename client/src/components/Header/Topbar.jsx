@@ -71,11 +71,11 @@ const Topbar = () => {
 
             {/* Instagram */}
             <a
-              href="https://instagram.com/"
+              href="linkedin.com/in/malik-noor"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-pink-400 transition-colors"
-              title="Instagram (Update link later)"
+              title="linkedin (Update link later)"
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
