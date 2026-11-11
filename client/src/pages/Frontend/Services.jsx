@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { ArrowUpCircle, ShieldCheck, Factory, Gauge, CheckCircle2, ArrowRight, Clock, HeadphonesIcon, Star, Settings2, Wrench } from 'lucide-react';
 import { motion } from 'framer-motion';
+import LiftCategoriesTable from './LiftCategoriesTable';
 
 const ServiceCard = ({ icon: Icon, title, description, features }) => (
   <motion.div
@@ -122,6 +123,9 @@ const Services = () => {
             <ServiceCard key={index} {...service} index={index} />
           ))}
         </div>
+
+        {/* Interactive Lift Categories & Specs Table Component */}
+        <LiftCategoriesTable />
 
         {/* Why Choose Us */}
         <div className="mb-16">

@@ -23,10 +23,10 @@ const highlights = [
 ];
 
 const metrics = [
-  { value: "500+", label: "Lifts Installed" },
-  { value: "15+", label: "Yrs Experience" },
-  { value: "100%", label: "Safety Tested" },
-  { value: "24/7", label: "Emergency Support" },
+  { value: "15+", label: "Years Engineering Expertise" },
+  { value: "500+", label: "Installations Across Commercial & Industrial Plazas" },
+  { value: "100%", label: "Safety Compliance (ARD & Mechanical Brakes)" },
+  { value: "24/7", label: "Breakdown Response" },
 ];
 
 const AnimatedTagline = () => {
@@ -123,26 +123,26 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-base sm:text-lg text-slate-200 leading-relaxed mb-7 max-w-xl">
-            Specialist in <strong className="text-white">Passenger, Cargo, Beam &amp; Home Lifts</strong>, <strong className="text-white">Overhead Crane Wench</strong>, <strong className="text-white">All Type of Conveyors</strong>, and All Kinds of <strong className="text-white">Spinning, Weaving, Processing &amp; Rice Mill Parts</strong> across Pakistan.
+            Pioneering safe, heavy-duty vertical mobility engineering and precision manufacturing across Pakistan. From high-speed passenger elevators and panoramic glass lifts to 5,000 kg industrial hydraulic cargo systems with automated ARD emergency rescue.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3.5 mb-9">
             <a
-              href="#services"
-              id="hero-explore-services"
+              href="#estimator"
+              id="hero-get-quote"
               className="inline-flex justify-center items-center gap-2 px-7 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm transition-all duration-200 shadow-lg shadow-blue-600/30 hover:scale-[1.02] active:scale-95"
             >
-              <span>Explore Lift Services</span>
+              <span>Get Instant Quote</span>
               <ArrowRight size={16} />
             </a>
             <a
-              href="tel:+923064854418"
-              id="hero-call-now"
+              href="#services"
+              id="hero-explore-models"
               className="inline-flex justify-center items-center gap-2 px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold rounded-xl text-sm transition-all duration-200 backdrop-blur-sm hover:scale-[1.02] active:scale-95"
             >
-              <Phone size={15} className="text-blue-400" />
-              <span>Call: 0306-485 4418</span>
+              <span>Explore Lift Models</span>
+              <ArrowRight size={15} className="text-slate-300" />
             </a>
           </div>
 

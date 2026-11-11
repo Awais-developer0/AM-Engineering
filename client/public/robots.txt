@@ -5,4 +5,4 @@ Disallow: /admin
 Disallow: /dashboard
 
 # Sitemaps
-Sitemap: https://amengineering.vercel.app/sitemap.xml
+Sitemap: https://am-engineering-am.vercel.app/sitemap.xml
