@@ -26,7 +26,7 @@ const metrics = [
   { value: "15+", label: "Years Engineering Expertise" },
   { value: "500+", label: "Installations Across Commercial & Industrial Plazas" },
   { value: "100%", label: "Safety Compliance (ARD & Mechanical Brakes)" },
-  { value: "24/7", label: "Breakdown Response" },
+  { value: "24/7", label: "Customer & Technical Support" },
 ];
 
 const AnimatedTagline = () => {
@@ -123,7 +123,7 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-base sm:text-lg text-slate-200 leading-relaxed mb-7 max-w-xl">
-            Pioneering safe, heavy-duty vertical mobility engineering and precision manufacturing across Pakistan. From high-speed passenger elevators and panoramic glass lifts to 5,000 kg industrial hydraulic cargo systems with automated ARD emergency rescue.
+            Pioneering safe, heavy-duty vertical mobility engineering and precision manufacturing across Pakistan. From high-speed passenger elevators and panoramic glass lifts to 5,000 kg industrial hydraulic cargo systems with automated ARD passenger safety.
           </p>
 
           {/* CTA Buttons */}

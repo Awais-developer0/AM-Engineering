@@ -47,7 +47,7 @@ const ServiceCard = ({ icon: Icon, title, description, features }) => (
 
 const whyItems = [
   { icon: ShieldCheck, title: '100% Quality Guaranteed', desc: 'Pre-dispatch testing & safety checks' },
-  { icon: Clock, title: '24/7 Breakdown Response', desc: 'Round-the-clock emergency support' },
+  { icon: Clock, title: '24/7 Technical Support', desc: 'Round-the-clock engineer assistance' },
   { icon: Star, title: 'Competitive Transparent Rates', desc: 'Fair solutions for all budget groups' },
   { icon: HeadphonesIcon, title: 'Nationwide Service', desc: 'Installation & supply across Pakistan' },
 ];
