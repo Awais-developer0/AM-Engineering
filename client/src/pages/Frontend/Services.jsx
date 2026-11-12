@@ -164,7 +164,7 @@ const ALL_CATALOG_SERVICES = [
     id: 'cloth-trolley',
     catalogName: 'CLOTH TROLLEY',
     title: 'Textile Fabric Transport Deep Box Trolley',
-    image: '/services/cloth-trolley-hd.jpg',
+    image: '/services/cloth-trolley-hd.png',
     category: 'Textile Trolleys & Storage Systems',
     categoryIcon: Truck,
     badge: 'Textile Processing',
@@ -496,14 +496,13 @@ const Services = () => {
                 className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 rounded-2xl overflow-hidden hover:border-blue-400 dark:hover:border-blue-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"
               >
                 {/* Product Image */}
-                <div className="h-60 bg-slate-950 relative overflow-hidden border-b border-slate-200 dark:border-slate-700/70 flex items-center justify-center">
+                <div className="h-64 bg-slate-100 dark:bg-slate-900/80 relative overflow-hidden border-b border-slate-200 dark:border-slate-700/70 flex items-center justify-center p-3">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-black/30 pointer-events-none" />
                   <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
                     <span className="px-2.5 py-1 text-[10px] font-black tracking-widest uppercase rounded bg-slate-950/85 backdrop-blur text-yellow-400 border border-yellow-500/40 shadow-sm">
                       {service.catalogName}
