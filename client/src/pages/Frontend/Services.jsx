@@ -19,7 +19,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import LiftCategoriesTable from './LiftCategoriesTable';
 
-// ── Complete 14 Official Products & Engineering Services from the Cards ──
+// ── Complete Individual Products & Engineering Services from the Card ──
 const ALL_CATALOG_SERVICES = [
   // 1. Loading Elevator
   {
@@ -27,7 +27,7 @@ const ALL_CATALOG_SERVICES = [
     catalogName: 'LOADING ELEVATOR',
     title: 'Loading & Cargo Elevator',
     image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=900',
-    category: 'Elevators & Vertical Transport',
+    category: 'Elevators & Lifts',
     categoryIcon: Building2,
     badge: 'Heavy Industrial',
     tagline: 'High-payload freight elevators for factory & warehouse material shifting.',
@@ -45,13 +45,13 @@ const ALL_CATALOG_SERVICES = [
   {
     id: 'passenger-elevator',
     catalogName: 'PASSENGER ELEVATOR',
-    title: 'Passenger Elevator & Home Lifts',
+    title: 'Passenger Elevator',
     image: 'https://images.unsplash.com/photo-1592256410394-51c948ec13d5?auto=format&fit=crop&q=80&w=900',
-    category: 'Elevators & Vertical Transport',
+    category: 'Elevators & Lifts',
     categoryIcon: Building2,
-    badge: 'Commercial & Residential',
-    tagline: 'Smooth, silent, luxurious automatic elevators for plazas & homes.',
-    description: 'Corporate commercial plazas, residential apartment buildings, hospitals, aur private luxury homes ke liye modern passenger elevators manufacture aur install karte hain. In me imported smooth VVVF gearless motor drives, digital floor displays, architectural glass ya hairline SS-304 cabin finish aur auto door sensors lagaye jaate hain.',
+    badge: 'Commercial Plaza',
+    tagline: 'Smooth, silent, luxurious automatic elevators for corporate plazas & apartments.',
+    description: 'Corporate commercial plazas, residential apartment buildings, hospitals, aur hotels ke liye modern passenger elevators manufacture aur install karte hain. In me imported smooth VVVF gearless motor drives, digital floor displays, architectural glass ya hairline SS-304 cabin finish aur auto door sensors lagaye jaate hain.',
     specs: [
       'Speed: 1.0 m/s – 2.0 m/s',
       'Cabins: Hairline Stainless Steel / Glass Panoramic',
@@ -61,77 +61,137 @@ const ALL_CATALOG_SERVICES = [
     weOfferText: 'Hum provide karte hain: Shaft measurement inspection, machine-room-less (MRL) design, interior cabin lighting, electrical wiring aur lifetime maintenance support.'
   },
 
-  // 3. Overhead Crane
+  // 3. Home Lifts
+  {
+    id: 'home-lifts',
+    catalogName: 'HOME LIFTS',
+    title: 'Luxury Home & Villa Lifts',
+    image: 'https://images.unsplash.com/photo-1708363795616-22b045b2b645?auto=format&fit=crop&q=80&w=900',
+    category: 'Elevators & Lifts',
+    categoryIcon: Building2,
+    badge: 'Residential Luxury',
+    tagline: 'Compact, quiet hydraulic & traction home elevators with zero pit requirement.',
+    description: 'Private residences, luxury duplexes aur bungalows ke liye bespoke home elevators install karte hain. In me extra deep pit ya roof machine room ki zaroorat nahi hoti. Single phase (220V) par chalne wali ultra-silent machinery ke sath family members aur elders ke liye safe, comfortable mobility provide karte hain.',
+    specs: [
+      'Capacity: 4-6 Persons (320 kg – 450 kg)',
+      'Power: Single Phase 220V regular electricity',
+      'Cabins: Architectural glass / wood laminate aesthetic',
+      'Safety: Instant battery backup automatic floor landing'
+    ],
+    weOfferText: 'Hum provide karte hain: Custom villa architectural shaft layout, glass panoramic capsule installation, luxury push buttons aur smooth hydraulic power pack.'
+  },
+
+  // 4. Beam Lifts
+  {
+    id: 'beam-lifts',
+    catalogName: 'BEAM LIFTS',
+    title: 'Cantilever Guided Beam Goods Lifts',
+    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=900',
+    category: 'Elevators & Lifts',
+    categoryIcon: Factory,
+    badge: 'Mezzanine Hoist',
+    tagline: 'Heavy guided steel beam cantilever lifts for factory mezzanine floors & storage lofts.',
+    description: 'Textile mills, warehouses aur industrial workshops me ground floor se mezzanine storage floor tak pallets, yarn boxes aur machinery shifting ke liye single/double guided beam cantilever lifts manufacture karte hain. Concrete shaft ke baghair self-supporting steel beam framework par move karti hai.',
+    specs: [
+      'Capacity: 500 kg – 3,000 kg',
+      'Mast: Prime heavy structural I-beam with guide rollers',
+      'Civil Work: Zero overhead machine room & shallow pit',
+      'Safety: Anti-drop safety clamps & emergency stop'
+    ],
+    weOfferText: 'Hum provide karte hain: Mezzanine height surveying, heavy cantilever carriage fabrication, hydraulic cylinder mounting aur safety interlocking gates.'
+  },
+
+  // 5. Overhead Crane
   {
     id: 'overhead-crane',
     catalogName: 'OVERHEAD CRANE',
-    title: 'Overhead Bridge Cranes & Hoist Wench',
+    title: 'Overhead Traveling Bridge Crane (EOT)',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=900',
-    category: 'Cranes & Heavy Lifting',
+    category: 'Cranes, Hoists & Conveyors',
     categoryIcon: Factory,
-    badge: 'Factory Lifting',
+    badge: 'Heavy Factory Lifting',
     tagline: 'Single & double girder EOT bridge cranes for industrial manufacturing bays.',
-    description: 'Heavy industrial production bays, metal fabrication workshops aur textile plants ke liye custom overhead traveling bridge cranes (EOT), gantry cranes aur motorized hoist wenches fabricate aur erect karte hain. Yeh cranes heavy machinery lifting, steel coils aur mold loading ko effortless aur safe bana deti hain.',
+    description: 'Heavy industrial production bays, steel mills, workshops aur processing plants ke liye overhead traveling bridge cranes (EOT) aur gantry cranes design, fabricate aur assemble karte hain. Heavy machinery parts, coils aur steel sections ko bay ke ek sire se doosre sire tak smoothly shift karti hain.',
     specs: [
+      'Span: 10m to 35m custom bay span',
       'Type: Single Girder / Double Girder / Gantry Crane',
-      'Hoist: Motorized electric wire-rope hoist wench',
-      'Control: Push-button pendant & wireless radio remote',
-      'Runway: Complete heavy I-beam rail tracks & end-trucks'
+      'Drive: Variable frequency motor drives (VVVF)',
+      'Runway: Heavy I-beam rail tracks & motorized end-trucks'
     ],
-    weOfferText: 'Hum provide karte hain: Crane structural engineering, rail alignment, motorized trolley installation, load deflection stress testing aur annual servicing.'
+    weOfferText: 'Hum provide karte hain: Structural crane engineering, runway beam alignment, load deflection stress testing aur complete bridge erection.'
   },
 
-  // 4. Loading Conveyors
+  // 6. Hoist Wench
+  {
+    id: 'hoist-wench',
+    catalogName: 'WENCH (HOIST WENCH)',
+    title: 'Motorized Electric Wire Rope Hoist Wench',
+    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=900',
+    category: 'Cranes, Hoists & Conveyors',
+    categoryIcon: Factory,
+    badge: 'Precision Lifting',
+    tagline: 'Heavy-duty motorized wire rope wench hoists with electromagnetic fail-safe brakes.',
+    description: 'Overhead bridge cranes, monorail I-beams aur construction hoists ke liye motorized electric wire-rope hoist wenches assemble aur manufacture karte hain. High-torque pure copper winding motors aur precision hardened gearboxes ke sath yeh wenches heavy loads ko safe aur jerk-free vertically lift karti hain.',
+    specs: [
+      'Lifting Capacity: 1 Ton to 20+ Ton',
+      'Rope: High-tensile galvanized steel wire rope',
+      'Brake: Automatic electro-magnetic disc/shoe brake',
+      'Control: Wireless radio remote & wired pendant switch'
+    ],
+    weOfferText: 'Hum provide karte hain: Custom rope drum grooving, forged steel hook block assembly, overload limiter integration aur hoist spare parts.'
+  },
+
+  // 7. Loading Conveyors
   {
     id: 'loading-conveyors',
     catalogName: 'LOADING CONVEYORS',
     title: 'Industrial Loading & Unloading Conveyors',
     image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=900',
-    category: 'Cranes & Heavy Lifting',
+    category: 'Cranes, Hoists & Conveyors',
     categoryIcon: Factory,
     badge: 'Bulk Material Handling',
-    tagline: 'Automated mobile & stationary belt conveyors for fast truck loading.',
-    description: 'Warehouses, rice mills, packaging units aur textile logistics ke liye heavy-duty loading conveyors manufacture karte hain. Heavy bags, cartons aur material sacks ko trucks aur containers me bina kisi manual thakan ke direct load aur unload karne ke liye height adjustable mobile conveyor systems provide ki jaati hain.',
+    tagline: 'Automated mobile & telescopic belt conveyors for rapid truck & container loading.',
+    description: 'Warehouses, packaging sheds, rice mills aur textile units me trucks aur containers me goods load/unload karne ke liye mobile inclined belt conveyors manufacture karte hain. Height adjustable frame aur forward-reverse motor drive ke sath yeh workers ki mehnat aur loading ka time 70% kam kar deti hain.',
     specs: [
-      'Belts: High-friction heavy rubber / PVC vulcanized belt',
+      'Belt: High-friction heavy rubber / PVC vulcanized belt',
       'Mobility: Heavy castor wheels for easy yard movement',
       'Elevation: Hydraulic / mechanical height incline adjust',
-      'Drive: High-torque geared motor with forward/reverse'
+      'Drive: High-torque geared motor with forward/reverse switch'
     ],
-    weOfferText: 'Hum provide karte hain: Telescopic & inclined conveyor fabrication, custom length/belt width options, electrical control panel installation aur spare rollers.'
+    weOfferText: 'Hum provide karte hain: Telescopic & inclined conveyor fabrication, custom length & belt width, electrical panel installation aur spare rubber rollers.'
   },
 
-  // 5. Cloth Trolley
+  // 8. Cloth Trolley
   {
     id: 'cloth-trolley',
     catalogName: 'CLOTH TROLLEY',
     title: 'Textile Cloth & Fabric Transport Trolley',
     image: 'https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&q=80&w=900',
-    category: 'Mill Trolleys & Storage Systems',
+    category: 'Textile Trolleys & Warehouse Racks',
     categoryIcon: Truck,
     badge: 'Textile Processing',
-    tagline: 'Heavy-gauge snag-free material transport carts for textile mills.',
-    description: 'Textile spinning, weaving, dyeing, bleaching aur printing mills ke liye high-durability cloth trolleys fabricate karte hain. Strong steel tubular pipes aur smooth perforated sheets se banayi jaati hain taake qeemti kapra kahi phas kar phate nahi aur heavy rolls easily ek department se doosre department move ho sakein.',
+    tagline: 'Smooth snag-free heavy steel cloth transport carts for weaving & processing.',
+    description: 'Spinning, weaving, bleaching, dyeing aur garment printing mills ke liye high-durability cloth trolleys manufacture karte hain. Tubular steel piping aur polished smooth sheet se banti hain taake qeemti kapra phanse ya kharaab na ho aur floor par smooth PU wheels ke zariye aasaani se push kiya ja sake.',
     specs: [
       'Body: Heavy gauge tubular frame with smooth interior',
       'Wheels: Polyurethane (PU) smooth rolling castor wheels',
-      'Coating: Anti-corrosion industrial epoxy painted finish',
-      'Design: Ergonomic push handles with reinforced corners'
+      'Protection: Anti-collision round corners & rubber bumpers',
+      'Finish: Anti-corrosion industrial epoxy painted finish'
     ],
     weOfferText: 'Hum provide karte hain: Custom mill dimension fabrication, batch size tailoring, extra-heavy load castor upgrades aur bulk factory supply.'
   },
 
-  // 6. Batching Trolley
+  // 9. Batching Trolley
   {
     id: 'batching-trolley',
     catalogName: 'BATCHING TROLLEY',
     title: 'A-Frame Batching Trolley',
     image: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=900',
-    category: 'Mill Trolleys & Storage Systems',
+    category: 'Textile Trolleys & Warehouse Racks',
     categoryIcon: Truck,
-    badge: 'Fabric Beam Handling',
-    tagline: 'Precision triangular A-frame batching transport for continuous processing.',
-    description: 'Weaving aur dyeing mills ke liye large fabric batch rolls aur stenter winding beams ko hold aur transport karne ke liye specialized A-Frame batching trolleys fabricate karte hain. Perfectly balanced triangular frame roll ko girne se mehfooz rakhta hai aur mill floor par smooth maneuverability deta hai.',
+    badge: 'Fabric Beam Transit',
+    tagline: 'Heavy triangular A-frame batching transport for jumbo fabric rolls & beams.',
+    description: 'Weaving aur continuous dyeing mills me jumbo fabric rolls aur stenter winding beams ko hold aur transport karne ke liye specialized A-frame batching trolleys fabricate karte hain. Sturdy triangular geometry roll ko girne se rokti hai aur smooth heavy bearings roll ki unrolling ko easy banate hain.',
     specs: [
       'Structure: Heavy structural channel triangular A-frame',
       'Bearings: Heavy-duty pillow block roll shaft bearings',
@@ -141,57 +201,77 @@ const ALL_CATALOG_SERVICES = [
     weOfferText: 'Hum provide karte hain: Mill beam size customization, center-of-gravity balance testing, brake-equipped castor assemblies aur heavy beam holders.'
   },
 
-  // 7. Roll Trolley
+  // 10. Roll Trolley (Multi-Tier)
   {
-    id: 'roll-trolley',
-    catalogName: 'ROLL TROLLEY',
-    title: 'Fabric Roll Holding & Cage Trolleys',
-    image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=900',
-    category: 'Mill Trolleys & Storage Systems',
+    id: 'roll-trolley-multi-tier',
+    catalogName: 'ROLL TROLLEY (MULTI-TIER)',
+    title: 'Multi-Tier Pipe Frame Roll Trolley',
+    image: 'https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=900',
+    category: 'Textile Trolleys & Warehouse Racks',
     categoryIcon: Truck,
-    badge: 'Storage & Transit',
-    tagline: 'Multi-tier roll storage racks and protective enclosed wire-mesh carts.',
-    description: 'Textile mills aur garment warehouses me finished fabric rolls ko organize karne aur securely shift karne ke liye multi-tier roll trolleys aur enclosed protective steel mesh cage carts provide karte hain. Is se fabric roll zameen par ganda hone aur transport ke dauran girne se mehfooz rehta hai.',
+    badge: 'Multi-Roll Storage',
+    tagline: 'Multi-tier horizontal pipe racks for high-density fabric roll organization & transit.',
+    description: 'Textile processing aur garment finishing departments ke liye multi-tier pipe frame roll trolleys provide karte hain. Is trolley me multiple horizontal support pipes hoti hain jin par fabric rolls alag alag rakhe jaate hain taake roll ka round shape kharab na ho aur ek waqt me kayi rolls move kiye ja sakein.',
     specs: [
-      'Variants: Multi-tier horizontal pipes & wire-mesh safety cage',
-      'Frame: Reinforced steel angles & tubular members',
-      'Protection: Mesh walls for total roll drop containment',
-      'Mobility: 4-wheel swivel castor steering with foot brakes'
+      'Tiers: 2 to 4 tiers horizontal pipe support racks',
+      'Pipes: Smooth round hollow steel seamless pipes',
+      'Capacity: 8 to 24 finished fabric rolls',
+      'Castors: 4-wheel swivel castor steering with foot brakes'
     ],
-    weOfferText: 'Hum provide karte hain: Custom shelf spacing, enclosed lockable doors, powder coated finish aur warehouse space optimization consultation.'
+    weOfferText: 'Hum provide karte hain: Custom tier gap sizing according to roll diameter, heavy pipe welding, scratch-proof coating aur smooth maneuverability setup.'
   },
 
-  // 8. Folding Rack
+  // 11. Roll Trolley (Enclosed Cage)
+  {
+    id: 'roll-trolley-cage',
+    catalogName: 'ROLL TROLLEY (CAGE)',
+    title: 'Enclosed Wire-Mesh Roll Safety Trolley',
+    image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=900',
+    category: 'Textile Trolleys & Warehouse Racks',
+    categoryIcon: Truck,
+    badge: 'Protective Cage',
+    tagline: 'Heavy structural wire-mesh enclosed carts preventing fabric rolls from dropping & damage.',
+    description: 'Warehouses aur processing units me finished fabric rolls aur valuable goods ko transport ke dauran girne aur zameen par ganda hone se bachane ke liye fully enclosed wire-mesh cage trolleys fabricate karte hain. Front dropdown gate ke sath aati hai taake loading-unloading easy ho.',
+    specs: [
+      'Walls: Heavy gauge welded steel wire mesh enclosure',
+      'Gate: Foldable / drop-down half gate with security latch',
+      'Base: Reinforced sheet metal with underside cross braces',
+      'Mobility: High-load industrial roller bearing castors'
+    ],
+    weOfferText: 'Hum provide karte hain: Custom cage dimensions, lockable safety latching, drop-down side panels aur corrosion resistant paint finishing.'
+  },
+
+  // 12. Folding Rack
   {
     id: 'folding-rack',
     catalogName: 'FOLDING RACK',
     title: 'Heavy Folding Racks & Pallet Stacking',
     image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=900',
-    category: 'Mill Trolleys & Storage Systems',
+    category: 'Textile Trolleys & Warehouse Racks',
     categoryIcon: Layers,
-    badge: 'Warehouse Storage',
-    tagline: 'Modular industrial steel storage racks and folding inventory stackers.',
-    description: 'Industrial storage rooms, factories aur logistics godowns ke liye heavy structural iron folding racks fabricate karte hain. Yeh space-saving modular racks hain jo zaroorat ke waqt easily stack ho jaate hain aur warehouse me heavy inventory aur machine parts ko clean organize rakhte hain.',
+    badge: 'Warehouse Stacking',
+    tagline: 'Modular heavy-gauge collapsible steel storage racks and inventory stackers.',
+    description: 'Industrial warehouses, godowns aur factory storerooms ke liye heavy structural iron folding racks fabricate karte hain. Yeh space-saving modular racks zaroorat ke waqt multi-tier stack ho jaate hain aur jab use me na hon to fold ho kar 80% floor area free kar dete hain.',
     specs: [
-      'Material: Prime structural channel & angle iron steel',
+      'Material: Prime structural channel & heavy angle iron',
       'Load Capacity: 500 kg – 2,500 kg per tier',
-      'Design: Boltless / heavy pin collapsible locking system',
-      'Finish: Heavy anti-rust primer and industrial topcoat'
+      'System: Boltless interlocking heavy pin collapsible design',
+      'Stacking: Up to 4 tiers high vertical fork-lift stacking'
     ],
-    weOfferText: 'Hum provide karte hain: Complete warehouse racking layout design, customized tier heights, floor anchor mounting aur high-density storage setup.'
+    weOfferText: 'Hum provide karte hain: Warehouse layout space planning, custom pallet dimensions, heavy duty base plates aur anti-rust primer coatings.'
   },
 
-  // 9. Boiler Pipe Lines
+  // 13. Boiler Pipe Lines
   {
     id: 'boiler-pipe-lines',
     catalogName: 'BOILER PIPE LINES',
     title: 'High-Pressure Boiler Steam Pipe Lines',
-    image: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=900',
-    category: 'Piping & Fluid Dynamics',
+    image: 'https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&q=80&w=900',
+    category: 'Industrial Piping & Pumps',
     categoryIcon: Flame,
     badge: 'Steam Engineering',
     tagline: 'High-pressure certified steam, thermal oil & condensate pipe manifolds.',
-    description: 'Textile processing mills, chemical factories aur food plants me steam boilers se production machines tak high-pressure steam distribution pipe lines, thermal oil circuits aur condensate return lines fabricate aur erect karte hain. Complete welding, flange jointing aur thermal insulation shamil hai.',
+    description: 'Textile processing mills, chemical factories aur food plants me steam boilers se machines tak high-pressure steam distribution pipe lines, thermal oil circuits aur condensate return lines fabricate aur erect karte hain. Complete certified welding, flange jointing aur thermal insulation provide ki jaati hai.',
     specs: [
       'Pipes: Seamless Schedule 40 & 80 high-pressure carbon steel',
       'Joints: Certified butt-welded & high-pressure flanged fittings',
@@ -201,57 +281,57 @@ const ALL_CATALOG_SERVICES = [
     weOfferText: 'Hum provide karte hain: Turnkey pipe layout engineering, boiler manifold fabrication, rockwool thermal cladding insulation aur safety pressure certification.'
   },
 
-  // 10. Mono Block Pump
+  // 14. Mono Block Pump
   {
     id: 'mono-block-pump',
     catalogName: 'MONO BLOCK PUMP',
-    title: 'Industrial Mono Block Pumps & Circulation',
+    title: 'Industrial Mono Block Centrifugal Pumps',
     image: 'https://images.unsplash.com/photo-1581092446327-9b52bd1570c2?auto=format&fit=crop&q=80&w=900',
-    category: 'Piping & Fluid Dynamics',
+    category: 'Industrial Piping & Pumps',
     categoryIcon: Factory,
-    badge: 'Heavy Pumping',
-    tagline: 'Heavy cast-iron centrifugal pumping units for factory fluid transfer.',
-    description: 'Factories, water supply networks, cooling towers aur industrial effluent processing ke liye high-efficiency mono block centrifugal pumps aur heavy fluid handling pumping sets supply aur install karte hain. Continuous 24/7 industrial running ke liye heavy cast-iron casing aur balanced impellers ke sath aate hain.',
+    badge: 'Fluid Dynamics',
+    tagline: 'Heavy cast-iron centrifugal pumping units for continuous factory fluid transfer.',
+    description: 'Industrial plants, water supply networks, cooling towers aur processing fluid transfer ke liye heavy mono block centrifugal pumps supply aur install karte hain. Continuous 24/7 duty ke liye high efficiency copper winding motors aur dynamically balanced bronze/SS impellers ke sath deliver karte hain.',
     specs: [
       'Casing: Graded heavy-duty cast iron body',
       'Impeller: Precision balanced bronze / stainless steel',
       'Motor: TEFC high-efficiency industrial copper winding motor',
       'Seal: Wear-resistant mechanical seal for zero fluid leakage'
     ],
-    weOfferText: 'Hum provide karte hain: Pump head & discharge flow calculation, foundation mounting, suction-delivery manifold piping aur electrical starter panel setup.'
+    weOfferText: 'Hum provide karte hain: Flow rate & head pressure calculation, pump foundation civil mounting, suction-delivery manifold piping aur starter panel integration.'
   },
 
-  // 11. Emergency Exit Stairs
+  // 15. Emergency Exit Stairs
   {
     id: 'emergency-exit-stairs',
     catalogName: 'EMERGENCY EXIT STAIRS',
     title: 'Structural Steel Emergency Fire Exit Stairs',
     image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=900',
-    category: 'Life Safety & Compliance',
+    category: 'Fire Safety & Compliance',
     categoryIcon: ShieldCheck,
-    badge: 'Factory Fire Safety',
-    tagline: 'Exterior heavy steel fire escape stair towers for commercial & mill plazas.',
-    description: 'Industrial plazas, multi-storey textile mills aur commercial buildings ke liye heavy structural channel steel ki exterior emergency fire escape staircases fabricate aur assemble karte hain. Serrated anti-slip grating steps, double safety handrails aur sturdy platform landings ensure karte hain ke emergency me safe evacuation ho sake.',
+    badge: 'Life Safety Code',
+    tagline: 'Exterior heavy structural steel fire escape towers for commercial & mill plazas.',
+    description: 'Multi-storey textile mills, commercial plazas aur factories ke liye heavy exterior emergency fire escape staircases fabricate aur erect karte hain. Serrated anti-slip steel grating steps, double-tier safety handrails aur sturdy platform landings ke sath banayi jaati hain taake kisi bhi emergency me safe evacuation ho sake.',
     specs: [
       'Structure: Heavy structural steel channel & box columns',
       'Steps: Anti-slip galvanized serrated safety grating',
       'Handrails: Double-tier heavy safety handrails & kickplates',
       'Compliance: Local labor laws & international factory safety codes'
     ],
-    weOfferText: 'Hum provide karte hain: Architectural height surveying, certified civil anchoring, anti-rust weather protective coatings aur fast on-site erection.'
+    weOfferText: 'Hum provide karte hain: Site structural height surveying, certified anchor foundation engineering, anti-corrosion weather coating aur complete on-site assembly.'
   },
 
-  // 12. Emergency Exit Doors
+  // 16. Emergency Exit Doors
   {
     id: 'emergency-exit-doors',
     catalogName: 'EMERGENCY EXIT DOORS',
     title: 'Fire Exit Emergency Panic Doors',
     image: 'https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&q=80&w=900',
-    category: 'Life Safety & Compliance',
+    category: 'Fire Safety & Compliance',
     categoryIcon: ShieldCheck,
-    badge: 'Building Code Safety',
-    tagline: 'Fire-rated heavy steel emergency doors with push-bar panic hardware.',
-    description: 'Factories, hospital wards, commercial plazas aur elevator lobbies ke liye certified steel fire exit emergency doors fabricate karte hain. Yeh doors certified panic crash push-bars ke sath aate hain taake kisi bhi emergency ya smoke ki soorat me halka sa push karne par darwaza foran open ho jaye.',
+    badge: 'Building Compliance',
+    tagline: 'Fire-rated insulated heavy steel emergency doors with push-bar panic hardware.',
+    description: 'Factories, hospital wards, commercial plazas aur elevator lobbies ke liye certified steel fire exit emergency doors fabricate karte hain. Yeh doors certified panic crash push-bars ke sath aate hain taake kisi bhi emergency ya smoke ki soorat me halka sa push karne par darwaza foran bahar ki taraf open ho jaye.',
     specs: [
       'Leaf: Double-skin insulated heavy-gauge steel door',
       'Hardware: Heavy-duty horizontal panic crash exit push-bar',
@@ -261,17 +341,17 @@ const ALL_CATALOG_SERVICES = [
     weOfferText: 'Hum provide karte hain: Door frame fabrication, auto hydraulic door closer fitting, panic hardware installation aur building compliance sign-off.'
   },
 
-  // 13. Fire Hydrant Pipe Lines
+  // 17. Fire Hydrant Pipe Lines
   {
     id: 'fire-hydrant-pipe-lines',
     catalogName: 'FIRE HYDRANT PIPE LINES',
     title: 'Factory Fire Hydrant Pipe Lines & Hose Cabinets',
     image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&q=80&w=900',
-    category: 'Life Safety & Compliance',
+    category: 'Fire Safety & Compliance',
     categoryIcon: Flame,
-    badge: 'Fire Safety Infrastructure',
+    badge: 'Fire Infrastructure',
     tagline: 'Industrial fire fighting ring mains, landing valves & hose reel cabinets.',
-    description: 'Factories, production sheds aur commercial buildings me fire safety ring mains, underground/overhead fire hydrant pipe networks, landing valves aur wall-mounted glass door fire hose reel cabinets fabricate aur install karte hain jo emergency firefighting ke liye har waqt high water pressure maintain rakhti hain.',
+    description: 'Factories, production sheds aur commercial plazas me fire safety ring mains, underground/overhead fire hydrant pipe networks, landing valves aur wall-mounted glass door fire hose reel cabinets fabricate aur install karte hain jo emergency firefighting ke liye har waqt high water pressure maintain rakhti hain.',
     specs: [
       'Pipes: Heavy high-pressure seamless steel piping with red finish',
       'Cabinet: Wall-mounted heavy steel box with glass viewing panel',
@@ -281,35 +361,75 @@ const ALL_CATALOG_SERVICES = [
     weOfferText: 'Hum provide karte hain: Complete factory fire line mapping, pump booster connection, hose cabinet fabrication aur hydrostatic flow testing.'
   },
 
-  // 14. Gears & V-Pulleys
+  // 18. Gears
   {
-    id: 'gears-and-pulleys',
-    catalogName: 'GEARS & V-PULLEY',
-    title: 'Industrial Precision Gears, Worm Drives & V-Pulleys',
-    image: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&q=80&w=900',
-    category: 'Mechanical Machining & Mill Spares',
+    id: 'gears',
+    catalogName: 'GEARS',
+    title: 'Precision Industrial Gears & Worm Drives',
+    image: 'https://images.unsplash.com/photo-1532382027701-7880cbd72789?auto=format&fit=crop&q=80&w=900',
+    category: 'Gears, Pulleys & Mill Parts',
     categoryIcon: Cog,
-    badge: 'Precision Transmission',
-    tagline: 'Custom gear cutting, elevator traction sheaves, worm drives & dynamically balanced V-pulleys.',
-    description: 'Apni workshop me modern gear hobbing aur shaping machines par high-precision spur, helical, bevel aur worm gear sets manufacture karte hain. Sath hi dynamically balanced graded cast-iron V-belt pulleys aur elevator traction drive sheaves fabricate karte hain jo machinery vibration ko eliminate karti hain.',
+    badge: 'CNC Gear Cutting',
+    tagline: 'Custom gear cutting, spur, helical, bevel gears, worm drives & shafts.',
+    description: 'Apni workshop me modern gear hobbing aur shaping machines par high-precision spur, helical, bevel aur worm gear sets manufacture karte hain. Textile machinery, elevator winches aur industrial gearboxes ke liye sample ya drawing ke mutabiq exact teeth pitch aur profile generate karte hain.',
     specs: [
-      'Gears: Spur, helical, bevel, worm wheel & shaft gear sets',
-      'Pulleys: Multi-groove V-belt pulleys (A, B, C, D, SPB sections)',
-      'Material: Alloy steel, high-tensile bronze & graded cast iron',
-      'Balancing: Computerized dynamic balancing for high-RPM vibration free running'
+      'Types: Spur, Helical, Bevel, Worm Wheel & Pinion Shafts',
+      'Material: Alloy steel (EN-8, EN-24, 20MnCr5) & Phosphor Bronze',
+      'Hardening: Induction hardening, case carburizing & precision tooth grinding',
+      'Accuracy: High dimensional accuracy for vibration-free silent running'
     ],
-    weOfferText: 'Hum provide karte hain: Sample-based reverse engineering, precision tooth hardening & grinding, custom shaft machining aur direct mill replacement parts.'
+    weOfferText: 'Hum provide karte hain: Sample-based reverse engineering, precision tooth cutting, custom shaft keyway broaching aur emergency broken gear duplication.'
+  },
+
+  // 19. V Pulley
+  {
+    id: 'v-pulley',
+    catalogName: 'V PULLEY',
+    title: 'Industrial Multi-Groove V-Pulleys & Sheaves',
+    image: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&q=80&w=900',
+    category: 'Gears, Pulleys & Mill Parts',
+    categoryIcon: Cog,
+    badge: 'Dynamic Balancing',
+    tagline: 'Heavy cast-iron V-belt pulleys, elevator traction sheaves & taper lock bushings.',
+    description: 'Graded cast iron aur steel se dynamically balanced multi-groove V-belt pulleys fabricate karte hain. Textile mills, compressors, flour mills aur elevator traction drive machines ke liye A, B, C, D aur SPB section grooves perfectly turn aur dynamic balance karte hain taake machinery vibration eliminate ho sake.',
+    specs: [
+      'Grooves: Single to 12-groove V-belt sections (A, B, C, D, SPA, SPB)',
+      'Sheaves: Multi-rope elevator traction drive sheaves',
+      'Material: High-grade close-grained Cast Iron (CI) & Mild Steel',
+      'Balancing: Computerized dynamic balancing for zero wobble at high RPM'
+    ],
+    weOfferText: 'Hum provide karte hain: Custom diameter turning, taper lock bushing fitting, keyway broaching aur elevator sheave regrooving services.'
+  },
+
+  // 20. Spinning, Weaving, Processing & Rice Mill Parts
+  {
+    id: 'mill-spare-parts',
+    catalogName: 'MILL SPARE PARTS',
+    title: 'Spinning, Weaving, Processing & Rice Mill Spare Parts',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=900',
+    category: 'Gears, Pulleys & Mill Parts',
+    categoryIcon: Cog,
+    badge: 'Mill Spare Parts',
+    tagline: 'Custom mechanical components, shafts, rollers & transmission parts for textile & rice mills.',
+    description: 'Spinning mills (blowroom, carding, ring frames), weaving looms (shuttleless, air jet, rapier), processing stenters aur modern rice mills ke critical mechanical spare parts fabricate karte hain. Precision machined rollers, shafts, drive couplings, brackets aur customized wear-resistant mill parts provide karte hain.',
+    specs: [
+      'Parts: Drive shafts, rollers, guide pins, bushes, flanges, couplings',
+      'Machines: Ring frames, carding machines, looms, elevators, dehuskers',
+      'Machining: Lathe turning, milling, surface grinding, broaching',
+      'Material: Prime alloy steels, stainless steel, bronze & nylon polymers'
+    ],
+    weOfferText: 'Hum provide karte hain: Direct factory broken part replication, batch part manufacturing, metallurgical material consultation aur fast workshop delivery across Pakistan.'
   }
 ];
 
 const CATEGORIES = [
-  'All 14 Official Services',
-  'Elevators & Vertical Transport',
-  'Cranes & Heavy Lifting',
-  'Mill Trolleys & Storage Systems',
-  'Piping & Fluid Dynamics',
-  'Life Safety & Compliance',
-  'Mechanical Machining & Mill Spares',
+  'All Products & Machinery',
+  'Elevators & Lifts',
+  'Cranes, Hoists & Conveyors',
+  'Textile Trolleys & Warehouse Racks',
+  'Industrial Piping & Pumps',
+  'Fire Safety & Compliance',
+  'Gears, Pulleys & Mill Parts',
 ];
 
 const whyItems = [
@@ -320,9 +440,9 @@ const whyItems = [
 ];
 
 const Services = () => {
-  const [activeCategory, setActiveCategory] = useState('All 14 Official Services');
+  const [activeCategory, setActiveCategory] = useState('All Products & Machinery');
 
-  const filteredServices = activeCategory === 'All 14 Official Services'
+  const filteredServices = activeCategory === 'All Products & Machinery'
     ? ALL_CATALOG_SERVICES
     : ALL_CATALOG_SERVICES.filter(s => s.category === activeCategory);
 
