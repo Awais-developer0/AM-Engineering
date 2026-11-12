@@ -26,7 +26,7 @@ const ALL_CATALOG_SERVICES = [
     id: 'loading-elevator',
     catalogName: 'LOADING ELEVATOR',
     title: 'Loading & Cargo Elevator',
-    image: '/services/loading-elevator.jpg',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=900',
     category: 'Elevators & Vertical Transport',
     categoryIcon: Building2,
     badge: 'Heavy Industrial',
@@ -46,7 +46,7 @@ const ALL_CATALOG_SERVICES = [
     id: 'passenger-elevator',
     catalogName: 'PASSENGER ELEVATOR',
     title: 'Passenger Elevator & Home Lifts',
-    image: '/services/passenger-elevator.jpg',
+    image: 'https://images.unsplash.com/photo-1592256410394-51c948ec13d5?auto=format&fit=crop&q=80&w=900',
     category: 'Elevators & Vertical Transport',
     categoryIcon: Building2,
     badge: 'Commercial & Residential',
@@ -66,7 +66,7 @@ const ALL_CATALOG_SERVICES = [
     id: 'overhead-crane',
     catalogName: 'OVERHEAD CRANE',
     title: 'Overhead Bridge Cranes & Hoist Wench',
-    image: '/services/overhead-crane.jpg',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=900',
     category: 'Cranes & Heavy Lifting',
     categoryIcon: Factory,
     badge: 'Factory Lifting',
@@ -86,7 +86,7 @@ const ALL_CATALOG_SERVICES = [
     id: 'loading-conveyors',
     catalogName: 'LOADING CONVEYORS',
     title: 'Industrial Loading & Unloading Conveyors',
-    image: '/services/loading-conveyors.jpg',
+    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=900',
     category: 'Cranes & Heavy Lifting',
     categoryIcon: Factory,
     badge: 'Bulk Material Handling',
@@ -106,7 +106,7 @@ const ALL_CATALOG_SERVICES = [
     id: 'cloth-trolley',
     catalogName: 'CLOTH TROLLEY',
     title: 'Textile Cloth & Fabric Transport Trolley',
-    image: '/services/cloth-trolley.jpg',
+    image: 'https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&q=80&w=900',
     category: 'Mill Trolleys & Storage Systems',
     categoryIcon: Truck,
     badge: 'Textile Processing',
@@ -126,7 +126,7 @@ const ALL_CATALOG_SERVICES = [
     id: 'batching-trolley',
     catalogName: 'BATCHING TROLLEY',
     title: 'A-Frame Batching Trolley',
-    image: '/services/batching-trolley.jpg',
+    image: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=900',
     category: 'Mill Trolleys & Storage Systems',
     categoryIcon: Truck,
     badge: 'Fabric Beam Handling',
@@ -146,7 +146,7 @@ const ALL_CATALOG_SERVICES = [
     id: 'roll-trolley',
     catalogName: 'ROLL TROLLEY',
     title: 'Fabric Roll Holding & Cage Trolleys',
-    image: '/services/roll-trolley.jpg',
+    image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=900',
     category: 'Mill Trolleys & Storage Systems',
     categoryIcon: Truck,
     badge: 'Storage & Transit',
@@ -166,7 +166,7 @@ const ALL_CATALOG_SERVICES = [
     id: 'folding-rack',
     catalogName: 'FOLDING RACK',
     title: 'Heavy Folding Racks & Pallet Stacking',
-    image: '/services/folding-rack.jpg',
+    image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=900',
     category: 'Mill Trolleys & Storage Systems',
     categoryIcon: Layers,
     badge: 'Warehouse Storage',
@@ -186,7 +186,7 @@ const ALL_CATALOG_SERVICES = [
     id: 'boiler-pipe-lines',
     catalogName: 'BOILER PIPE LINES',
     title: 'High-Pressure Boiler Steam Pipe Lines',
-    image: '/services/boiler-pipe-lines.jpg',
+    image: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=900',
     category: 'Piping & Fluid Dynamics',
     categoryIcon: Flame,
     badge: 'Steam Engineering',
@@ -206,7 +206,7 @@ const ALL_CATALOG_SERVICES = [
     id: 'mono-block-pump',
     catalogName: 'MONO BLOCK PUMP',
     title: 'Industrial Mono Block Pumps & Circulation',
-    image: '/services/mono-block-pump.jpg',
+    image: 'https://images.unsplash.com/photo-1581092446327-9b52bd1570c2?auto=format&fit=crop&q=80&w=900',
     category: 'Piping & Fluid Dynamics',
     categoryIcon: Factory,
     badge: 'Heavy Pumping',
@@ -226,7 +226,7 @@ const ALL_CATALOG_SERVICES = [
     id: 'emergency-exit-stairs',
     catalogName: 'EMERGENCY EXIT STAIRS',
     title: 'Structural Steel Emergency Fire Exit Stairs',
-    image: '/services/emergency-exit-stairs.jpg',
+    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=900',
     category: 'Life Safety & Compliance',
     categoryIcon: ShieldCheck,
     badge: 'Factory Fire Safety',
@@ -246,7 +246,7 @@ const ALL_CATALOG_SERVICES = [
     id: 'emergency-exit-doors',
     catalogName: 'EMERGENCY EXIT DOORS',
     title: 'Fire Exit Emergency Panic Doors',
-    image: '/services/emergency-exit-doors.jpg',
+    image: 'https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&q=80&w=900',
     category: 'Life Safety & Compliance',
     categoryIcon: ShieldCheck,
     badge: 'Building Code Safety',
@@ -266,7 +266,7 @@ const ALL_CATALOG_SERVICES = [
     id: 'fire-hydrant-pipe-lines',
     catalogName: 'FIRE HYDRANT PIPE LINES',
     title: 'Factory Fire Hydrant Pipe Lines & Hose Cabinets',
-    image: '/services/fire-hydrant-pipe-lines.jpg',
+    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&q=80&w=900',
     category: 'Life Safety & Compliance',
     categoryIcon: Flame,
     badge: 'Fire Safety Infrastructure',
@@ -286,7 +286,7 @@ const ALL_CATALOG_SERVICES = [
     id: 'gears-and-pulleys',
     catalogName: 'GEARS & V-PULLEY',
     title: 'Industrial Precision Gears, Worm Drives & V-Pulleys',
-    image: '/services/gears.jpg',
+    image: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&q=80&w=900',
     category: 'Mechanical Machining & Mill Spares',
     categoryIcon: Cog,
     badge: 'Precision Transmission',
@@ -377,17 +377,18 @@ const Services = () => {
                 transition={{ duration: 0.3, delay: index * 0.03 }}
                 className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 rounded-2xl overflow-hidden hover:border-blue-400 dark:hover:border-blue-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"
               >
-                {/* Product Image from Official Brochure */}
-                <div className="h-56 bg-white dark:bg-slate-950 relative overflow-hidden flex items-center justify-center p-3 border-b border-slate-200 dark:border-slate-700/70">
+                {/* Product Image from High-Definition Industrial Catalog */}
+                <div className="h-56 bg-slate-900 relative overflow-hidden border-b border-slate-200 dark:border-slate-700/70">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute top-3 left-3 flex flex-col gap-1">
-                    <span className="px-2 py-0.5 text-[9px] font-black tracking-widest uppercase rounded bg-slate-900/90 text-yellow-400 border border-yellow-500/30">
-                      Card: {service.catalogName}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 pointer-events-none" />
+                  <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
+                    <span className="px-2.5 py-1 text-[10px] font-black tracking-widest uppercase rounded bg-slate-950/85 backdrop-blur text-yellow-400 border border-yellow-500/40 shadow-sm">
+                      {service.catalogName}
                     </span>
                     <span className="px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider rounded bg-blue-600 text-white shadow-sm self-start">
                       {service.badge}
