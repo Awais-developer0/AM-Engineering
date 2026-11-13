@@ -73,12 +73,12 @@ const ScreenLoader = () => {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="text-center"
             >
-              <h1
+              <div
                 className="text-3xl sm:text-4xl font-extrabold text-white tracking-wider uppercase mb-1"
                 style={{ fontFamily: 'Outfit, sans-serif' }}
               >
                 A.M <span className="text-blue-400">Engineering</span>
-              </h1>
+              </div>
               <p className="text-blue-300/80 text-[11px] font-bold tracking-[0.25em] uppercase mb-1">
                 &amp; Elevators
               </p>

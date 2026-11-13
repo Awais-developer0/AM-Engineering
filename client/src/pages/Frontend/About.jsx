@@ -41,10 +41,10 @@ const useCountUp = (target, isInView) => {
 };
 
 const statItems = [
-  { icon: Building2, label: 'Lifts Installed', value: 500, suffix: '+', subtitle: 'Commercial & Industrial Sites', color: 'blue' },
-  { icon: ShieldCheck, label: 'Safety Record', value: 100, suffix: '%', subtitle: 'Zero Failure Standards', color: 'emerald' },
-  { icon: Clock, label: 'Years in Elevators', value: 15, suffix: '+', subtitle: 'Specialized Engineering', color: 'indigo' },
-  { icon: Award, label: 'Client Satisfaction', value: 99, suffix: '%', subtitle: 'Nationwide Trusted Partner', color: 'sky' },
+  { icon: Building2, label: 'All Lift Types', value: 'All Models', suffix: '', subtitle: 'Custom In-House Fabrication', color: 'blue' },
+  { icon: ShieldCheck, label: 'Safety Compliance', value: 'Strict ARD', suffix: '', subtitle: 'Certified Dual Brake Systems', color: 'emerald' },
+  { icon: Clock, label: 'Graduate Engineers', value: 'B.Sc.', suffix: '', subtitle: 'Mechanical Engineering Leads', color: 'indigo' },
+  { icon: Award, label: 'Technical Service', value: '24/7', suffix: '', subtitle: 'Continuous Support & AMC Repair', color: 'sky' },
 ];
 
 const liftPillars = [
@@ -212,7 +212,8 @@ const teamMembers = [
 const StatCard = ({ icon: Icon, label, value, suffix, subtitle, color, index }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
-  const count = useCountUp(value || 0, inView);
+  const isNumber = typeof value === 'number';
+  const count = useCountUp(isNumber ? value : 0, inView);
   const style = colorStyles[color] || colorStyles.blue;
 
   return (
@@ -227,8 +228,8 @@ const StatCard = ({ icon: Icon, label, value, suffix, subtitle, color, index }) 
       <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-3.5 border ${style.icon}`}>
         <Icon size={22} />
       </div>
-      <div className="text-3xl font-extrabold text-slate-900 dark:text-white mb-1" style={{ fontFamily: 'Outfit, sans-serif' }}>
-        {inView ? count : 0}{suffix}
+      <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-1" style={{ fontFamily: 'Outfit, sans-serif' }}>
+        {isNumber ? `${inView ? count : 0}${suffix}` : value}
       </div>
       <div className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
         {label}
@@ -267,22 +268,22 @@ const AboutUs = () => {
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-5 leading-tight" style={{ fontFamily: 'Outfit, sans-serif' }}>
-              Specialists in Safe, High-Speed{' '}
+              Custom Design &amp; Installation of{' '}
               <span className="text-blue-600 dark:text-blue-400">
-                Elevators &amp; Lifts
+                All Types of Lifts in Faisalabad
               </span>
             </h2>
 
             <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 mb-4 leading-relaxed font-medium">
-              Are you looking for a safe and efficient passenger lift? Are you tired of spending money on the maintenance of passenger lifts? Well, then you have landed at the right place. Because <strong className="text-slate-900 dark:text-white">A.M ENGINEERING &amp; ELEVATORS</strong> deals in all kinds of passenger lifts and automatic elevators.
+              Are you looking for a safe, reliable, and energy-efficient elevator? Tired of recurrent maintenance issues? At <strong className="text-slate-900 dark:text-white">A.M ENGINEERING &amp; ELEVATORS</strong>, we manufacture, erect, and service <strong>every type of lift</strong> across Faisalabad and all of Punjab.
             </p>
 
             <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base mb-4 leading-relaxed">
-              Our company offers different kinds of passenger lifts used for different purposes. Most of our automatic lifts are hydraulic, ensuring maximum safety. In addition to space-efficient elevators, we deal in high speed and stylish lifts in various sizes, shapes, and materials — whether you are looking for <strong>mild steel lifts</strong> or <strong>glass elevators</strong>, our company covers everything.
+              We specialize in the complete spectrum of vertical transportation: high-speed commercial <strong>passenger elevators</strong>, heavy industrial <strong>cargo &amp; freight lifts</strong> up to 5,000 kg, luxury residential <strong>home &amp; villa lifts</strong>, smooth <strong>hydraulic elevators</strong>, architectural <strong>panoramic glass capsule lifts</strong>, and self-supporting <strong>guided beam mezzanine hoists</strong>.
             </p>
 
             <p className="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed">
-              We are committed to providing the best cargo lift services throughout the country (installation, modernization, testing, and commissioning), heavy overhead crane wench, all types of conveyors, and all kinds of spinning, weaving, processing &amp; rice mill parts at reasonable rates.
+              Every system is engineered in our local workshop under the direct supervision of certified Graduate Mechanical Engineers, backed by round-the-clock <strong>24/7 maintenance, inspection, and emergency breakdown repair</strong>.
             </p>
 
             {/* Check Pillars */}
@@ -325,7 +326,7 @@ const AboutUs = () => {
                     Qualified Engineering Leadership
                   </h3>
                   <p className="text-blue-100 text-xs sm:text-sm mt-0.5 leading-relaxed">
-                    Directed by certified mechanical engineers <strong>M. Naseer (CEO)</strong>, <strong>Noor Ahmad (MD)</strong>, and <strong>M. Arslan (Project Engineer)</strong> — ensuring precision calculations, certified fabrication, and zero-defect elevator commissioning.
+                    Directed by certified mechanical engineers <strong>Noor Ahmad (Primary: 0306-485 4418)</strong>, <strong>M. Naseer (CEO: 0320-657 9307)</strong>, and <strong>M. Arslan (Project Engineer: 0307-486 0805)</strong> — ensuring precision calculations, certified fabrication, and zero-defect elevator commissioning.
                   </p>
                 </div>
               </div>

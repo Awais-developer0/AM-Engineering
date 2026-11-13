@@ -17,35 +17,15 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import LiftCategoriesTable from './LiftCategoriesTable';
 
-// ── Complete 20 Official Equipment & Engineering Services from the Brochure ──
-const ALL_CATALOG_SERVICES = [
-  // 1. Loading Elevator
-  {
-    id: 'loading-elevator',
-    catalogName: 'LOADING ELEVATOR',
-    title: 'Heavy Industrial Cargo & Freight Elevator',
-    image: '/services/loading-elevator-hd.jpg',
-    category: 'Elevators & Vertical Lifts',
-    categoryIcon: Building2,
-    badge: 'Heavy Industrial',
-    tagline: 'High-payload vertical goods hoists engineered for heavy factory and warehouse transport.',
-    description: 'We design, manufacture, and erect heavy-duty industrial loading elevators and goods hoists built for manufacturing plants, spinning mills, processing facilities, and logistics centers. Engineered with heavy reinforced structural steel guide masts, hydraulic cylinder rams or wire-rope traction machines, and heavy-gauge protective mesh enclosures for safe multi-floor cargo transit.',
-    specs: [
-      'Payload Capacity: 1,000 kg – 5,000+ kg custom ratings',
-      'Drive Mechanism: Heavy-duty hydraulic ram or wire-rope traction',
-      'Platform Deck: Non-skid chequered steel plate with forklift bumper rails',
-      'Safety Systems: Instant hydraulic rupture lock & electromechanical limit stops'
-    ],
-    scope: 'Custom platform sizing, structural shaft tower fabrication, automatic bi-parting shutter assembly, on-site load testing, and turnkey commissioning.'
-  },
-
-  // 2. Passenger Elevator
+// ── 1. Complete Lift Systems (Primary Core Focus) ──
+const LIFT_SERVICES = [
+  // 1. Passenger Elevator
   {
     id: 'passenger-elevator',
     catalogName: 'PASSENGER ELEVATOR',
     title: 'High-Speed Commercial Passenger Elevator',
     image: '/services/passenger-elevator-hd.jpg',
-    category: 'Elevators & Vertical Lifts',
+    category: 'Commercial & Residential Lifts',
     categoryIcon: Building2,
     badge: 'Commercial & Plaza',
     tagline: 'Ultra-smooth, energy-efficient automated passenger lifts for commercial plazas and high-rises.',
@@ -59,13 +39,33 @@ const ALL_CATALOG_SERVICES = [
     scope: 'Shaft survey, machine-room-less (MRL) engineering, cabin interior customization, certified electrical installation, and 24/7 maintenance support.'
   },
 
-  // 3. Home Lifts
+  // 2. Heavy Industrial Loading & Cargo Elevator
+  {
+    id: 'loading-elevator',
+    catalogName: 'LOADING ELEVATOR',
+    title: 'Heavy Industrial Cargo & Freight Elevator',
+    image: '/services/loading-elevator-hd.jpg',
+    category: 'Industrial Freight Lifts',
+    categoryIcon: Building2,
+    badge: 'Heavy Industrial',
+    tagline: 'High-payload vertical goods hoists engineered for heavy factory and warehouse transport.',
+    description: 'We design, manufacture, and erect heavy-duty industrial loading elevators and goods hoists built for manufacturing plants, spinning mills, processing facilities, and logistics centers. Engineered with heavy reinforced structural steel guide masts, hydraulic cylinder rams or wire-rope traction machines, and heavy-gauge protective mesh enclosures for safe multi-floor cargo transit.',
+    specs: [
+      'Payload Capacity: 1,000 kg – 5,000+ kg custom ratings',
+      'Drive Mechanism: Heavy-duty hydraulic ram or wire-rope traction',
+      'Platform Deck: Non-skid chequered steel plate with forklift bumper rails',
+      'Safety Systems: Instant hydraulic rupture lock & electromechanical limit stops'
+    ],
+    scope: 'Custom platform sizing, structural shaft tower fabrication, automatic bi-parting shutter assembly, on-site load testing, and turnkey commissioning.'
+  },
+
+  // 3. Luxury Home & Villa Lifts
   {
     id: 'home-lifts',
     catalogName: 'HOME LIFTS',
     title: 'Architectural Luxury Home & Villa Elevator',
     image: '/services/home-lifts-hd.jpg',
-    category: 'Elevators & Vertical Lifts',
+    category: 'Residential Luxury Lifts',
     categoryIcon: Building2,
     badge: 'Residential Luxury',
     tagline: 'Whisper-quiet hydraulic and traction residential lifts requiring zero civil pit excavation.',
@@ -79,13 +79,53 @@ const ALL_CATALOG_SERVICES = [
     scope: 'Residential architectural consultation, panoramic glass shaft erection, silent hydraulic power pack installation, and annual preventive servicing.'
   },
 
-  // 4. Beam Lifts
+  // 4. Industrial Hydraulic Lifts
+  {
+    id: 'hydraulic-lifts',
+    catalogName: 'HYDRAULIC LIFTS',
+    title: 'Heavy Industrial & Commercial Hydraulic Lift',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=900',
+    category: 'Hydraulic Elevator Systems',
+    categoryIcon: Factory,
+    badge: 'Direct Hydraulic Ram',
+    tagline: 'Smooth hydraulic power packs engineered for maximum lifting power, stability, and low civil cost.',
+    description: 'Precision hydraulic lift systems designed for both heavy industrial goods transit and low-rise passenger applications. Powered by high-pressure Italian hydraulic pump units and rupture-safe cylinder rams, these lifts eliminate overhead machine rooms and operate safely on single or dual cylinder configurations.',
+    specs: [
+      'Drive System: High-pressure precision hydraulic ram with proportional soft-stop valves',
+      'Civil Advantage: Zero overhead machine room required; low pit depth adaptable',
+      'Rupture Safety: Velocity fuse valves lock cylinder instantly if fluid pressure drops',
+      'Emergency Operation: Battery manual lowering valve returns cabin safely to ground'
+    ],
+    scope: 'Hydraulic cylinder machining, pump station integration, guide rail installation, and rigorous full-load pressure testing.'
+  },
+
+  // 5. Panoramic Glass & Capsule Lifts
+  {
+    id: 'panoramic-glass-lifts',
+    catalogName: 'GLASS CAPSULE LIFTS',
+    title: 'Architectural Panoramic Glass Capsule Elevator',
+    image: 'https://images.unsplash.com/photo-1532382027701-7880cbd72789?auto=format&fit=crop&q=80&w=900',
+    category: 'Panoramic Glass Lifts',
+    categoryIcon: Building2,
+    badge: 'Panoramic Glass',
+    tagline: '360° observation glass elevators adding architectural elegance to malls and luxury buildings.',
+    description: 'Custom round, square, and polygon observation glass elevators fabricated with laminated safety glass and architectural stainless steel framework. Designed as a visual centerpiece for shopping malls, luxury hotels, corporate headquarters, and upscale residences across Pakistan.',
+    specs: [
+      'Glass Material: 10+10 mm curved or flat laminated structural safety glass',
+      'Cabin Frame: Stainless steel SS-304 hairline or gold titanium mirror finish',
+      'Drive Mechanism: Ultra-quiet gearless PMSM or whisper hydraulic system',
+      'Interior Ambiance: Concealed LED downlighting and custom touch panel controls'
+    ],
+    scope: 'Architectural shaft coordination, glass fabrication and tempered certification, stainless steel cladding, and turnkey commissioning.'
+  },
+
+  // 6. Guided Beam Goods Lift
   {
     id: 'beam-lifts',
     catalogName: 'BEAM LIFTS',
     title: 'Guided Cantilever Beam Goods Lift',
     image: '/services/beam-lifts-hd.jpg',
-    category: 'Elevators & Vertical Lifts',
+    category: 'Mezzanine Hoist Systems',
     categoryIcon: Factory,
     badge: 'Mezzanine Hoist',
     tagline: 'Self-supporting steel cantilever beam hoists for warehouse mezzanines and storage lofts.',
@@ -98,6 +138,10 @@ const ALL_CATALOG_SERVICES = [
     ],
     scope: 'Mezzanine dimensional survey, cantilever carriage welding, hydraulic cylinder assembly, interlock safety wiring, and proof load verification.'
   },
+];
+
+// ── 2. Industrial Machinery, Cranes, Conveyors & Mill Parts (Secondary Engineering Products) ──
+const INDUSTRIAL_SERVICES = [
 
   // 5. Overhead Crane
   {
@@ -420,9 +464,8 @@ const ALL_CATALOG_SERVICES = [
   }
 ];
 
-const CATEGORIES = [
-  'All Equipment & Machinery',
-  'Elevators & Vertical Lifts',
+const INDUSTRIAL_CATEGORIES = [
+  'All Industrial Equipment',
   'Cranes, Hoists & Conveyors',
   'Textile Trolleys & Storage Systems',
   'Industrial Piping & Pumping Systems',
@@ -431,162 +474,276 @@ const CATEGORIES = [
 ];
 
 const whyItems = [
-  { icon: ShieldCheck, title: '100% Quality Assurance', desc: 'Rigorous pre-dispatch deflection tests & dimensional validation' },
-  { icon: Clock, title: '24/7 Technical Support', desc: 'Round-the-clock rapid response engineering assistance' },
-  { icon: Star, title: 'Direct Manufacturer Pricing', desc: 'In-house precision fabrication with no middleman overhead' },
+  { icon: ShieldCheck, title: 'Certified Safety Compliance', desc: 'Strict ARD automatic rescue device & dual speed governor compliance' },
+  { icon: Clock, title: '24/7 Service & Breakdown Repair', desc: 'Round-the-clock rapid response engineering and maintenance assistance' },
+  { icon: Star, title: 'Direct Workshop Pricing', desc: 'In-house precision fabrication with cost-effective local engineering' },
   { icon: HeadphonesIcon, title: 'Nationwide Commissioning', desc: 'Certified delivery, erection & turnkey installation across Pakistan' },
 ];
 
 const Services = () => {
-  const [activeCategory, setActiveCategory] = useState('All Equipment & Machinery');
+  const [activeCategory, setActiveCategory] = useState('All Industrial Equipment');
 
-  const filteredServices = activeCategory === 'All Equipment & Machinery'
-    ? ALL_CATALOG_SERVICES
-    : ALL_CATALOG_SERVICES.filter(s => s.category === activeCategory);
+  const filteredIndustrial = activeCategory === 'All Industrial Equipment'
+    ? INDUSTRIAL_SERVICES
+    : INDUSTRIAL_SERVICES.filter(s => s.category === activeCategory);
 
   return (
     <section id="services" className="py-20 md:py-24 bg-white dark:bg-slate-900 transition-colors duration-300 border-b border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        {/* ═════════════════════════════════════════════════════════════════
+            PRIMARY CORE SECTION: LIFTS & ELEVATOR SYSTEMS
+        ═════════════════════════════════════════════════════════════════ */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold mb-3 uppercase tracking-widest bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800/80">
-            <span>Official Workshop Catalog &amp; Products</span>
+            <Building2 size={13} />
+            <span>Primary Specialization: Vertical Transportation</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4" style={{ fontFamily: 'Outfit, sans-serif' }}>
-            Our Complete Engineering Machinery &amp; Fabrication Services
+            All Types of Lift Installation, Manufacturing &amp; Repair in Faisalabad
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
-            Every product and machinery line listed in our official brochure is engineered and manufactured in-house, backed by turnkey installation, precision load testing, and comprehensive lifetime technical maintenance.
+          <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed">
+            <strong className="text-slate-900 dark:text-white">A.M Engineering &amp; Elevators</strong> designs, manufactures, and installs <strong>every type of lift</strong> across Faisalabad, Lahore, and throughout Punjab — including commercial passenger elevators, heavy industrial cargo lifts, residential home lifts, hydraulic systems, panoramic glass lifts, and guided beam mezzanine hoists, supported by 24/7 maintenance and emergency breakdown repair.
           </p>
         </div>
 
-        {/* Category Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-          {CATEGORIES.map((cat) => {
-            const isActive = activeCategory === cat;
-            return (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${
-                  isActive
-                    ? 'bg-blue-600 text-white shadow-md shadow-blue-600/25 scale-105'
-                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/80 dark:hover:bg-slate-700/60'
-                }`}
-              >
-                {cat}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Services Grid with Exact Matching Product Images */}
+        {/* Primary Lift Cards Grid (All 6 Lift Types) */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          <AnimatePresence mode="popLayout">
-            {filteredServices.map((service, index) => (
-              <motion.div
-                key={service.id}
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3, delay: index * 0.03 }}
-                className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 rounded-2xl overflow-hidden hover:border-blue-400 dark:hover:border-blue-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"
-              >
-                {/* Product Image */}
-                <div className="h-64 bg-slate-100 dark:bg-slate-900/80 relative overflow-hidden border-b border-slate-200 dark:border-slate-700/70 flex items-center justify-center p-3">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
-                    <span className="px-2.5 py-1 text-[10px] font-black tracking-widest uppercase rounded bg-slate-950/85 backdrop-blur text-yellow-400 border border-yellow-500/40 shadow-sm">
-                      {service.catalogName}
-                    </span>
-                    <span className="px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider rounded bg-blue-600 text-white shadow-sm self-start">
-                      {service.badge}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Card Content */}
-                <div className="p-6 flex-1 flex flex-col">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
-                    {service.category}
+          {LIFT_SERVICES.map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 rounded-2xl overflow-hidden hover:border-blue-400 dark:hover:border-blue-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"
+            >
+              {/* Lift Image */}
+              <div className="h-64 bg-slate-100 dark:bg-slate-900/80 relative overflow-hidden border-b border-slate-200 dark:border-slate-700/70 flex items-center justify-center p-3">
+                <img
+                  src={service.image}
+                  alt={`${service.title} - Lift installation in Faisalabad`}
+                  className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
+                  loading="lazy"
+                />
+                <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
+                  <span className="px-2.5 py-1 text-[10px] font-black tracking-widest uppercase rounded bg-slate-950/85 backdrop-blur text-yellow-400 border border-yellow-500/40 shadow-sm">
+                    {service.catalogName}
                   </span>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2" style={{ fontFamily: 'Outfit, sans-serif' }}>
-                    {service.title}
-                  </h3>
-                  <p className="text-xs font-semibold text-blue-600 dark:text-blue-400 mb-2.5">
-                    {service.tagline}
-                  </p>
-                  <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed text-xs sm:text-sm">
-                    {service.description}
-                  </p>
-
-                  {/* Bullet Highlights / Technical Specs */}
-                  <div className="mb-4 pt-3 border-t border-slate-200/80 dark:border-slate-700/60">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-2">
-                      Key Technical Specifications:
-                    </span>
-                    <ul className="space-y-1.5">
-                      {service.specs.map((item, i) => (
-                        <li key={i} className="flex items-start text-slate-700 dark:text-slate-300 text-xs gap-2">
-                          <CheckCircle2 size={13} className="text-emerald-500 flex-shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Manufacturing & Scope Box */}
-                  <div className="p-3.5 rounded-xl bg-blue-50/80 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/40 mb-5">
-                    <p className="text-[11px] text-blue-900 dark:text-blue-200 leading-snug">
-                      <strong className="text-blue-700 dark:text-blue-300 font-bold block mb-0.5">Manufacturing &amp; Engineering Scope:</strong>
-                      {service.scope}
-                    </p>
-                  </div>
-
-                  {/* Direct Quotation & Engineering Contact */}
-                  <div className="mt-auto pt-3 border-t border-slate-200 dark:border-slate-700/60 flex items-center justify-between">
-                    <a
-                      href={`https://wa.me/923064854418?text=Hello%20A.M%20Engineering,%20I%20am%20interested%20in%20quotation%20and%20technical%20specifications%20for%20${encodeURIComponent(service.title)}.`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-bold text-xs uppercase tracking-wider text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 group transition-all"
-                    >
-                      <span>Request Technical Quote</span>
-                      <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
-                    </a>
-                    <a
-                      href="tel:+923064854418"
-                      className="p-2 rounded-lg bg-slate-200/70 dark:bg-slate-700/60 hover:bg-blue-600 hover:text-white text-slate-600 dark:text-slate-300 transition-colors"
-                      title="Direct Engineer Call"
-                    >
-                      <Phone size={14} />
-                    </a>
-                  </div>
+                  <span className="px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider rounded bg-blue-600 text-white shadow-sm self-start">
+                    {service.badge}
+                  </span>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+              </div>
+
+              {/* Lift Card Content */}
+              <div className="p-6 flex-1 flex flex-col">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 block mb-1">
+                  {service.category}
+                </span>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                  {service.title}
+                </h3>
+                <p className="text-xs font-semibold text-slate-700 dark:text-slate-300 mb-2.5">
+                  {service.tagline}
+                </p>
+                <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed text-xs sm:text-sm">
+                  {service.description}
+                </p>
+
+                {/* Technical Specifications */}
+                <div className="mb-4 pt-3 border-t border-slate-200/80 dark:border-slate-700/60">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-2">
+                    Key Technical Specifications:
+                  </span>
+                  <ul className="space-y-1.5">
+                    {service.specs.map((item, i) => (
+                      <li key={i} className="flex items-start text-slate-700 dark:text-slate-300 text-xs gap-2">
+                        <CheckCircle2 size={13} className="text-emerald-500 flex-shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Manufacturing & Scope Box */}
+                <div className="p-3.5 rounded-xl bg-blue-50/80 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/40 mb-5">
+                  <p className="text-[11px] text-blue-900 dark:text-blue-200 leading-snug">
+                    <strong className="text-blue-700 dark:text-blue-300 font-bold block mb-0.5">Manufacturing &amp; Engineering Scope:</strong>
+                    {service.scope}
+                  </p>
+                </div>
+
+                {/* Direct Quotation & Engineering Contact */}
+                <div className="mt-auto pt-3 border-t border-slate-200 dark:border-slate-700/60 flex items-center justify-between">
+                  <a
+                    href={`https://wa.me/923064854418?text=Hello%20A.M%20Engineering,%20I%20am%20interested%20in%20quotation%20and%20technical%20specifications%20for%20${encodeURIComponent(service.title)}.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 font-bold text-xs uppercase tracking-wider text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 group transition-all"
+                  >
+                    <span>Request Technical Quote</span>
+                    <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  <a
+                    href="tel:+923064854418"
+                    className="p-2 rounded-lg bg-slate-200/70 dark:bg-slate-700/60 hover:bg-emerald-600 hover:text-white text-slate-600 dark:text-slate-300 transition-colors"
+                    title="Direct Call: Noor Ahmed (0306-4854418)"
+                  >
+                    <Phone size={14} />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Technical Specs Comparison Matrix Component */}
         <LiftCategoriesTable />
 
-        {/* Why Choose A.M Engineering Section */}
+        {/* ═════════════════════════════════════════════════════════════════
+            SECONDARY DISTINCT SECTION: INDUSTRIAL MACHINERY & MILL PARTS
+        ═════════════════════════════════════════════════════════════════ */}
+        <div className="mt-24 pt-16 border-t-2 border-slate-200 dark:border-slate-800" id="industrial-machinery">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold mb-3 uppercase tracking-widest bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800/80">
+              <Factory size={13} />
+              <span>Secondary Workshop Fabrication &amp; Equipment</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-4" style={{ fontFamily: 'Outfit, sans-serif' }}>
+              Industrial Machinery, Overhead Cranes, Conveyors &amp; Mill Parts
+            </h2>
+            <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+              In addition to our elevator systems, our Faisalabad workshop manufactures heavy overhead crane winches, industrial belt and roller conveyors, textile handling trolleys, steam boiler pipelines, centrifugal pumps, certified fire escape stairs and doors, and precision CNC gears.
+            </p>
+          </div>
+
+          {/* Secondary Category Filter Pills */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+            {INDUSTRIAL_CATEGORIES.map((cat) => {
+              const isActive = activeCategory === cat;
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${
+                    isActive
+                      ? 'bg-amber-600 text-white shadow-md shadow-amber-600/25 scale-105'
+                      : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/80 dark:hover:bg-slate-700/60'
+                  }`}
+                >
+                  {cat}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Secondary Products Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <AnimatePresence mode="popLayout">
+              {filteredIndustrial.map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  layout
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3, delay: index * 0.03 }}
+                  className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 rounded-2xl overflow-hidden hover:border-amber-400 dark:hover:border-amber-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"
+                >
+                  {/* Product Image */}
+                  <div className="h-64 bg-slate-100 dark:bg-slate-900/80 relative overflow-hidden border-b border-slate-200 dark:border-slate-700/70 flex items-center justify-center p-3">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
+                      <span className="px-2.5 py-1 text-[10px] font-black tracking-widest uppercase rounded bg-slate-950/85 backdrop-blur text-yellow-400 border border-yellow-500/40 shadow-sm">
+                        {service.catalogName}
+                      </span>
+                      <span className="px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider rounded bg-amber-600 text-white shadow-sm self-start">
+                        {service.badge}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Card Content */}
+                  <div className="p-6 flex-1 flex flex-col">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                      {service.category}
+                    </span>
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                      {service.title}
+                    </h3>
+                    <p className="text-xs font-semibold text-amber-600 dark:text-amber-400 mb-2.5">
+                      {service.tagline}
+                    </p>
+                    <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed text-xs sm:text-sm">
+                      {service.description}
+                    </p>
+
+                    {/* Bullet Highlights / Technical Specs */}
+                    <div className="mb-4 pt-3 border-t border-slate-200/80 dark:border-slate-700/60">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-2">
+                        Key Technical Specifications:
+                      </span>
+                      <ul className="space-y-1.5">
+                        {service.specs.map((item, i) => (
+                          <li key={i} className="flex items-start text-slate-700 dark:text-slate-300 text-xs gap-2">
+                            <CheckCircle2 size={13} className="text-emerald-500 flex-shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Manufacturing & Scope Box */}
+                    <div className="p-3.5 rounded-xl bg-amber-50/80 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/40 mb-5">
+                      <p className="text-[11px] text-amber-900 dark:text-amber-200 leading-snug">
+                        <strong className="text-amber-700 dark:text-amber-300 font-bold block mb-0.5">Manufacturing &amp; Engineering Scope:</strong>
+                        {service.scope}
+                      </p>
+                    </div>
+
+                    {/* Direct Quotation & Engineering Contact */}
+                    <div className="mt-auto pt-3 border-t border-slate-200 dark:border-slate-700/60 flex items-center justify-between">
+                      <a
+                        href={`https://wa.me/923064854418?text=Hello%20A.M%20Engineering,%20I%20am%20interested%20in%20quotation%20and%20technical%20specifications%20for%20${encodeURIComponent(service.title)}.`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 font-bold text-xs uppercase tracking-wider text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 group transition-all"
+                      >
+                        <span>Request Technical Quote</span>
+                        <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                      </a>
+                      <a
+                        href="tel:+923064854418"
+                        className="p-2 rounded-lg bg-slate-200/70 dark:bg-slate-700/60 hover:bg-amber-600 hover:text-white text-slate-600 dark:text-slate-300 transition-colors"
+                        title="Direct Call: Noor Ahmed (0306-4854418)"
+                      >
+                        <Phone size={14} />
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* ═════════════════════════════════════════════════════════════════
+            WHY CHOOSE A.M ENGINEERING
+        ═════════════════════════════════════════════════════════════════ */}
         <div className="mt-20 pt-16 border-t border-slate-200 dark:border-slate-800">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-3" style={{ fontFamily: 'Outfit, sans-serif' }}>
-              Why Industrial Clients Partner With A.M Engineering
+              Why Industrial Clients Partner With A.M Engineering &amp; Elevators
             </h3>
             <p className="text-slate-600 dark:text-slate-400 text-sm">
-              Direct workshop manufacturing, certified civil engineering standards, and unmatched round-the-clock field support across Pakistan.
+              Direct workshop manufacturing, strict ARD safety compliance, and round-the-clock 24/7 technical field support across Pakistan.
             </p>
           </div>
           

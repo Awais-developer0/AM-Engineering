@@ -59,7 +59,7 @@ const SafetyStandards = () => {
             <span>Uncompromising Life Safety Engineering</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4" style={{ fontFamily: 'Outfit, sans-serif' }}>
-            Engineered for 100% Passenger &amp; Cargo Safety
+            Strict Safety &amp; ARD Emergency Compliance for All Lifts
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
             At A.M Engineering &amp; Elevators, every lift is built around fail-safe mechanical and electronic redundancies. We ensure absolute peace of mind for commercial plazas, residential homes, and heavy industrial facilities across Pakistan.

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Header from '../../components/Header';
-import ScreenLoader from '../../components/Misc/ScreenLoader';
 import Footer from '../../components/Footer';
 import FloatingContact from '../../components/Misc/FloatingContact';
 
@@ -40,7 +39,6 @@ const FrontendLayout = () => {
 
   return (
     <>
-      <ScreenLoader />
       <Header />
       <main>
         <Home />

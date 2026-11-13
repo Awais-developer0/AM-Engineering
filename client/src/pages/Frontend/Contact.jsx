@@ -58,10 +58,29 @@ const FloatingTextarea = ({ id, label, rows = 4, value, onChange }) => {
 };
 
 const contactItems = [
-  { icon: MapPin, title: 'Workshop Address', content: 'Crescent Sugar Mill Road\nNear Shakeel Park Qabristan\nFaisalabad, Pakistan', href: 'https://goo.gl/maps/tnQpavkiijQUSBTX7' },
-  { icon: Phone, title: 'Direct Partner Numbers', content: 'Noor Ahmed: +92 306 485 4418\nM. Naseer: +92 320 657 9307', href: 'https://wa.me/923064854418' },
-  { icon: Mail, title: 'Email Address', content: 'ameng307@gmail.com', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=ameng307@gmail.com' },
-  { icon: Clock, title: 'Operating Hours', content: 'Mon – Sat: 8:00 AM – 6:00 PM\nSunday: Emergency Orders Only' },
+  { 
+    icon: MapPin, 
+    title: 'Workshop & Head Office', 
+    content: 'Crescent Sugar Mill Road\nNear Shakeel Park Qabristan\nFaisalabad, 38000, Pakistan', 
+    href: 'https://goo.gl/maps/tnQpavkiijQUSBTX7' 
+  },
+  { 
+    icon: Phone, 
+    title: 'Direct Engineering Contacts', 
+    content: 'Primary: 0306-485 4418 (Noor Ahmed)\nSecondary: 0320-657 9307 (M. Naseer)', 
+    href: 'https://wa.me/923064854418' 
+  },
+  { 
+    icon: Mail, 
+    title: 'Official Email', 
+    content: 'ameng307@gmail.com', 
+    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=ameng307@gmail.com' 
+  },
+  { 
+    icon: Clock, 
+    title: 'Operating Hours (24/7 Open)', 
+    content: 'Open 24/7 (Monday to Sunday: 00:00 – 23:59)\nNo Off Day — 24/7 Service & Breakdown Support' 
+  },
 ];
 
 const Contact = () => {

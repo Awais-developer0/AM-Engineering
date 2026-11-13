@@ -10,11 +10,11 @@ const Topbar = () => {
       <div className="py-2 px-4 md:px-8 flex flex-row justify-between items-center text-[10px] md:text-[11px]  tracking-wider font-semibold">
         {/* Left: Contact Info */}
         <div className="flex items-center space-x-4 md:space-x-6">
-          <a href="https://wa.me/923064854418" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors group" title="Noor Ahmed">
-            <Phone size={13} className="text-blue-400 group-hover:scale-110 transition-transform" />
-            <span className="hidden sm:inline">0306-485 4418</span>
+          <a href="https://wa.me/923064854418" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-emerald-400 transition-colors group" title="Primary Contact & WhatsApp: Noor Ahmed">
+            <Phone size={13} className="text-emerald-400 group-hover:scale-110 transition-transform" />
+            <span className="hidden sm:inline">0306-485 4418 <span className="text-[9px] text-emerald-400 font-bold uppercase tracking-wider">(Primary)</span></span>
           </a>
-          <a href="https://wa.me/923206579307" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors group" title="M. Naseer">
+          <a href="https://wa.me/923206579307" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors group" title="Secondary Contact & CEO: M. Naseer">
             <Phone size={13} className="text-blue-400 group-hover:scale-110 transition-transform" />
             <span className="hidden sm:inline">0320-657 9307</span>
           </a>

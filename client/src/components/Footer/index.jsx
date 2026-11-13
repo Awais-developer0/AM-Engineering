@@ -206,14 +206,18 @@ const Footer = () => {
                     rel="noreferrer"
                     className="hover:text-white transition-colors underline-offset-2 hover:underline"
                   >
-                    Crescent Sugar Mill Road<br />Near Shakeel Park Qabristan<br />Faisalabad, Pakistan
+                    Crescent Sugar Mill Road<br />Near Shakeel Park Qabristan<br />Faisalabad, 38000, Pakistan
                   </a>
                 </li>
                 <li className="flex items-center gap-3 text-slate-400 text-sm">
-                  <Phone size={16} className="text-blue-400 flex-shrink-0" />
+                  <Phone size={16} className="text-emerald-400 flex-shrink-0" />
                   <div className="flex flex-col gap-0.5">
-                    <a href="https://wa.me/923064854418" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Noor Ahmed: 0306-485 4418</a>
-                    <a href="tel:+923206579307" className="hover:text-white transition-colors">M. Naseer: 0320-657 9307</a>
+                    <a href="https://wa.me/923064854418" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors font-medium">
+                      Primary: 0306-485 4418 <span className="text-[10px] text-emerald-400 font-bold uppercase">(Noor Ahmed)</span>
+                    </a>
+                    <a href="tel:+923206579307" className="hover:text-white transition-colors text-slate-400">
+                      Secondary: 0320-657 9307 <span className="text-[10px] text-slate-500 font-normal">(M. Naseer)</span>
+                    </a>
                   </div>
                 </li>
                 <li className="flex items-center gap-3 text-slate-400 text-sm">
@@ -222,12 +226,14 @@ const Footer = () => {
                 </li>
               </ul>
 
-              {/* Working Hours Badge */}
-              <div className="mt-4 px-3 py-2 bg-slate-800/80 border border-slate-700/80 rounded-xl flex items-center gap-2.5">
-                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
+              {/* Working Hours Badge: 24/7 */}
+              <div className="mt-4 px-3 py-2.5 bg-slate-800/80 border border-slate-700/80 rounded-xl flex items-center gap-2.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
                 <div>
-                  <div className="text-white text-xs font-medium">Workshop Open</div>
-                  <div className="text-slate-400 text-[10px]">Mon – Sat: 8:00 AM – 6:00 PM</div>
+                  <div className="text-white text-xs font-bold flex items-center gap-1.5">
+                    <span>24/7 Open — No Off Day</span>
+                  </div>
+                  <div className="text-slate-400 text-[10px]">Mon – Sun (00:00 – 23:59) Round-the-Clock</div>
                 </div>
               </div>
             </div>

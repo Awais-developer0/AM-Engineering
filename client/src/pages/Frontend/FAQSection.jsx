@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const faqs = [
   {
     q: "How much does a passenger or home elevator cost in Pakistan?",
-    a: "Elevator pricing depends on the number of stops/floors, payload capacity (4 to 16 persons), cabin interior finish (Hairline stainless steel vs Gold titanium vs Panoramic glass), and drive technology (Gearless PMSM vs Hydraulic). Because A.M Engineering & Elevators manufactures structural frames and components locally in our Faisalabad workshop while importing certified European safety parts, our prices are up to 30% more competitive than fully imported foreign units without compromising safety. Contact us for an exact itemized quotation tailored to your site.",
+    a: "Elevator pricing depends on the number of stops/floors, payload capacity (4 to 16 persons), cabin interior finish (Hairline stainless steel vs Gold titanium vs Panoramic glass), and drive technology (Gearless PMSM vs Hydraulic). Because A.M Engineering & Elevators manufactures structural frames and components directly in our Faisalabad workshop while integrating certified safety parts, our pricing is cost-effective and highly competitive compared to fully imported foreign units without compromising on engineering precision. Contact us for an exact itemized quotation tailored to your site.",
   },
   {
     q: "What happens to the elevator during sudden WAPDA power cuts or load shedding?",
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Do you provide 24/7 emergency lift breakdown repair and annual maintenance (AMC)?",
-    a: "Yes. We operate round-the-clock emergency breakdown support. Our certified elevator technicians and mechanical engineers respond rapidly to breakdown calls across Faisalabad, Lahore, and adjacent industrial hubs. We also provide Annual Maintenance Contracts (AMC) covering monthly safety audits, lubrication, cable inspections, and motor servicing.",
+    a: "Yes. Our engineering support is open 24 hours a day, 7 days a week (including Sundays — no off day). Our certified elevator technicians and mechanical engineers respond rapidly to breakdown calls across Faisalabad, Lahore, and adjacent industrial hubs. We also provide Annual Maintenance Contracts (AMC) covering regular safety audits, lubrication, cable inspections, and motor servicing.",
   },
   {
     q: "What warranty coverage is included with A.M Engineering elevator installations?",
